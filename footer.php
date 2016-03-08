@@ -42,7 +42,7 @@
         <a href="#"><i class="icon-twitter"></i></a>
         <a href="#"><i class="icon-instagram"></i></a>
       </ul>
-      <p class="copywrite">Copywrite not copywrite © 2015</p>
+      <p class="copywrite">&copy; Confluence Fly Shop <?php echo date("Y"); ?></p>
     </div>
   </div>
 </footer>
