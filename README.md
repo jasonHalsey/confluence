@@ -10,18 +10,18 @@ This theme is for the wordpress phase of Confluence Fly Shop site build.
 
 ## TODO
 
-**1. Add CPT for River Reports
+**1. Add CPT for River Reports**
 	- River Summary
 	- Hatches
 	- River Flow
 	- Weather
 	- Rating System - Opinion-based
 
-**2. Blog Layout
+**2. Blog Layout**
 	- Title
 	- Author
 	- 
 
-**3. Events Page
+**3. Events Page**
 
-**4. Contact Page
+**4. Contact Page**
