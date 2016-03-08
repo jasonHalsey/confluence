@@ -1,23 +1,15 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
-    <link rel="stylesheet" href="css/app.css">
-  </head>
-  <body>
+<?php get_header(); ?>
+
     <div class="row">
       <div class="large-12 columns">
-        <h1>Welcome to Foundation</h1>
+        <?php echo do_shortcode("[rev_slider alias='homeSlide']"); ?>
       </div>
     </div>
     
     <div class="row">
       <div class="large-12 columns">
         <div class="callout">
-          <h3>We&rsquo;re stoked you want to try Foundation! </h3>
+          <h3>We&rsquo;re floored you want to try Foundation! </h3>
           <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
           <p>Once you've exhausted the fun in this document, you should check out:</p>
           <div class="row">
@@ -160,9 +152,5 @@
       </div>
     </div>
 
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/what-input/what-input.js"></script>
-    <script src="bower_components/foundation-sites/dist/foundation.js"></script>
-    <script src="js/app.js"></script>
   </body>
-</html>
+<?php get_footer(); ?>
