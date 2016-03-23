@@ -1,7 +1,3 @@
-
-<!-- <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet"> -->
-
-
 <footer class="footer">
   <div class="row">
     <div class="small-12 medium-6 medium-push-6 columns">
@@ -46,7 +42,7 @@
     </div>
   </div>
 </footer>
-
+</div>
 
 <?php wp_footer(); ?>
 </html>

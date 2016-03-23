@@ -14,7 +14,9 @@
   	<div class="title-bar-title">Menu</div>
 	</div>
 
-	<div class="top-bar" id="main-menu">
+<div data-sticky-container>
+
+	<div class="top-bar sticky" id="main-menu" data-sticky data-options="marginTop:0;stickTo:top" style="width:100%">
 	  <div class="top-bar-left">
 	    <ul class="dropdown menu" data-dropdown-menu>
 	      <li class="menu-text">Site Title</li>
@@ -22,8 +24,5 @@
 	  </div>
 	  <div class="top-bar-right">
 	    <?php wp_nav_menu( array( 'menu_id' => 'menu', 'theme_location' => 'primary-menu', 'menu_class' => 'show', 'container' => false ) ); ?>
-	    <!-- <?#php wp_nav_menu( array( 'menu_id' => 'menu', 'theme_location' => 'primary', 'menu_class' => 'show', 'container' => false ) ); ?> -->
 	  </div>
 	</div>
-
-

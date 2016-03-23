@@ -1,8 +1,12 @@
+.sticky-container {
+    height:0;
+  }
+
 // for presentation only
 body {marging-top: 2rem;}
 
 // $menu-background: #333;
-$menu-background: $primaryBlue;
+$menu-background: $blackTrans;
 
 .title-bar {
   background: $menu-background;
@@ -11,15 +15,15 @@ $menu-background: $primaryBlue;
 
 .top-bar {
   background: $menu-background;
-  
+  padding: 1.75em 0;
   ul {
-    background: $menu-background;
-  
+    background: none;
+    padding-right:4.0em;
     li {
-      background: $menu-background;
-    
-        a {
-          color: #fff;
+      background: none;
+      a {
+        color: #fff;
+        font-size: 1.25em;
       }
     }
   }
