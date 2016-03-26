@@ -7,33 +7,35 @@
     </div>
     
     <div class="row">
-      <div class="large-12 columns">
-        <div class="callout">
-          <h3>We&rsquo;re floored you want to try Foundation! </h3>
-          <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
-          <p>Once you've exhausted the fun in this document, you should check out:</p>
-          <div class="row">
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
-            </div>
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a><br />These online courses offer you a chance to better understand how Foundation works and how you can master it to create awesome projects.</p>
-            </div>
-            <div class="large-4 medium-4 columns">
-              <p><a href="http://foundation.zurb.com/forum">Foundation Forum</a><br />Join the Foundation community to ask a question or show off your knowlege.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 medium-4 medium-push-2 columns">
-              <p><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</p>
-            </div>
-            <div class="large-4 medium-4 medium-pull-2 columns">
-              <p><a href="https://twitter.com/ZURBfoundation">@zurbfoundation</a><br />Ping us on Twitter if you have questions. When you build something with this we'd love to see it (and send you a totally boss sticker).</p>
-            </div>        
-          </div>
-        </div>
+      <div class="large-8 medium-8 columns">
+
+      </div>
+      
+         
+          <?php
+            $mypost = array( 'post_type' => 'report','orderby' => 'menu_order');
+            $loop = new WP_Query( $mypost );
+          ?>
+          <?php while ( $loop->have_posts() ) : $loop->the_post();?>
+             
+                <div class="large-4 medium-4 columns"> 
+                  <h3><?php the_title(); ?></h3>                     
+                  <ul class="species_list">
+                    <?php 
+                      $balls = get_post_meta( $post->ID, '_cmb2_species_multicheckbox', true );
+                      foreach($balls as $term): ?>
+                        <li class="<?php echo $term; ?> species_box">
+                          <img src="<?php echo bloginfo('template_directory'); ?>/images/species_<?php echo $term?>.jpg " />
+                        </li>
+                    <?php endforeach; ?>
+                  </ul>   
+                </div>                 
+              
+          <?php endwhile; ?>
       </div>
     </div>
+
+
 
     <div class="row">
       <div class="large-8 medium-8 columns">

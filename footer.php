@@ -43,6 +43,6 @@
   </div>
 </footer>
 </div>
-
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
 <?php wp_footer(); ?>
 </html>

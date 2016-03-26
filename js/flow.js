@@ -1,13 +1,15 @@
-<script type="text/javascript">
-var usgsNum = '<?php echo $usgs_site ?>';
 
-var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=14076500&parameterCd=' + usgsNum + '&siteType=ST';
 
-console.log(flowAPI);
-console.log(usgsNum);
+// var usgsNum = '<?php echo $usgs_site ?>';
+// console.log(usgsNum);
+
+//Stream Flow Test
+// var flowAPI = "http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=14076500&parameterCd=00065&siteType=ST";
+
+var flowAPI = "http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=14076500&parameterCd=' + usgsNum + '&siteType=ST";
 
 weatherFn = function(url) {
-  jQuery.getJSON(url, function (json) {
+  $.getJSON(url, function (json) {
 
     var dateCreate = json.creationDateLocal
     var weatherTime  = json.time.startPeriodName[0]
@@ -15,45 +17,45 @@ weatherFn = function(url) {
     var weatherWeather = json.data.weather[0]
     var weatherTemp = json.data.temperature[0]
 
-    jQuery('.weather_date').text(dateCreate);
-    jQuery('.weather_time').text(weatherTime);
-    jQuery('.weather_temp').html(weatherTemp + '&deg;');
-    jQuery('.weather_text').text(weatherText);
-    jQuery('.weather_weather').text(weatherWeather);
+    $('.weather_date').text(dateCreate);
+    $('.weather_time').text(weatherTime);
+    $('.weather_temp').html(weatherTemp + '&deg;');
+    $('.weather_text').text(weatherText);
+    $('.weather_weather').text(weatherWeather);
 
     if(weatherWeather == "Isolated Showers") {
-      jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
+      $('#weather_icon').addClass('diw-cloud-rain-2-sun')
     }
     else if(weatherWeather == "Mostly Cloudy") {
-      jQuery('#weather_icon').addClass('diw-clouds')
+      $('#weather_icon').addClass('diw-clouds')
     }
     else if(weatherWeather == "Chance Rain") {
-      jQuery('#weather_icon').addClass('diw-cloud-hail-sun')
+      $('#weather_icon').addClass('diw-cloud-hail-sun')
     }
     else if(weatherWeather == "Mostly Sunny") {
-      jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
+      $('#weather_icon').addClass('diw-cloud-rain-2-sun')
     }
     else if(weatherWeather == "Mostly Clear") {
-      jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
+      $('#weather_icon').addClass('diw-cloud-rain-2-sun')
     }
     else if(weatherWeather == "Sunny") {
-      jQuery('#weather_icon').addClass('diw-sun')
+      $('#weather_icon').addClass('diw-sun')
     }
     else if(weatherWeather == "Clear") {
-      jQuery('#weather_icon').addClass('diw-sun')
+      $('#weather_icon').addClass('diw-sun')
     }
     else if(weatherWeather == "Slight Chance Rain then Partly Sunny") {
-      jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
+      $('#weather_icon').addClass('diw-cloud-rain-2-sun')
     }
     else {
-      jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
+      $('#weather_icon').addClass('diw-cloud-rain-2-sun')
     }
 
 
   })
 }
 
-jQuery.getJSON(flowAPI, function (json) {
+$.getJSON(flowAPI, function (json) {
 
   var baseString = json.value.timeSeries[0]
   var createTime = baseString.values[0].value[0].dateTime
@@ -87,27 +89,23 @@ jQuery.getJSON(flowAPI, function (json) {
       }
   }).addTo(map);
 
-    jQuery('.test').html(getWords(str));
-    jQuery('.createTime').text(createTime);
-    jQuery('.sitename').text(locationName);
-    jQuery('.flowNum').html
+    $('.test').html(getWords(str));
+    $('.createTime').text(createTime);
+    $('.sitename').text(locationName);
+    $('.flowNum').html
     (flowNum + '&nbsp;cfs');
 
 
     if(flowNum >= 4700) {
-      jQuery('#gauge').addClass('success');
+      $('#gauge').addClass('success');
     }
 })
 
 
 
 
-jQuery(document).ready(function(){
+$(document).ready(function(){
 
   L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25oYWxzZXkiLCJhIjoiY2lrZm5oOWh3MDAxeHUza2w5MnM2aHdzYSJ9.WXf_OK1N34LKLlkBHCt_9w';
 
 });
-
-
-
-</script>
