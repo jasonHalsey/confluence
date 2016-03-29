@@ -15,14 +15,16 @@ Template Name: river_report
 <?php $usgs_site = get_post_meta( $post->ID, '_cmb2_siteNum', true ) ?>
 
 
-<div class="row">
-
-
   <section class="module parallax parallax-1" style="background-image: url(<?php echo get_post_meta( $post->ID, '_cmb2_report_image', true ); ?>)">
     <div class="container">
       <h1><?php the_title() ?></h1>
     </div>
   </section>
+
+<div class="row">
+
+
+
 
   <section class="module content">
     <div class="container">

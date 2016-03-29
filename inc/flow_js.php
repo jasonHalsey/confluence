@@ -62,7 +62,18 @@ jQuery.getJSON(flowAPI, function (json) {
   var flowLat = baseString.sourceInfo.geoLocation.geogLocation.latitude
   var flowLong = baseString.sourceInfo.geoLocation.geogLocation.longitude
   weatherFn("http://forecast.weather.gov/MapClick.php?lat=" + flowLat + "&lon=" + flowLong + "&FcstType=json");
-  var map = L.mapbox.map('map-one', 'mapbox.outdoors').setView([flowLat,flowLong], 14);
+  var map = L.mapbox.map('map-one', 'mapbox.satellite').setView([flowLat,flowLong], 18);
+
+ // Disable drag and zoom handlers.
+  // map.dragging.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
+  map.keyboard.disable();
+
+  // Disable tap handler, if present.
+  if (map.tap) map.tap.disable();
+
 
   var str = locationName;
   function getWords(str) {
@@ -98,8 +109,6 @@ jQuery.getJSON(flowAPI, function (json) {
       jQuery('#gauge').addClass('success');
     }
 })
-
-
 
 
 jQuery(document).ready(function(){
