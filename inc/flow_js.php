@@ -3,9 +3,6 @@ var usgsNum = '<?php echo $usgs_site ?>';
 
 var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=14076500&parameterCd=' + usgsNum + '&siteType=ST';
 
-console.log(flowAPI);
-console.log(usgsNum);
-
 weatherFn = function(url) {
   jQuery.getJSON(url, function (json) {
 
@@ -98,7 +95,7 @@ jQuery.getJSON(flowAPI, function (json) {
       }
   }).addTo(map);
 
-    jQuery('.test').html(getWords(str));
+    jQuery('.river_name').html(getWords(str));
     jQuery('.createTime').text(createTime);
     jQuery('.sitename').text(locationName);
     jQuery('.flowNum').html

@@ -1,42 +1,41 @@
 <?php get_header(); ?>
 
-    <div class="row">
-      <div class="large-12 columns">
-        <?php echo do_shortcode("[rev_slider alias='homeSlide']"); ?>
+    <div class="hero_row">
+      <div class="large-12 columns hero">
+      <div class="logo">
+        <img src="<?php echo bloginfo('template_directory'); ?>/images/white_logo_600.svg" alt="Confluence Fly Shop"/>
+      </div>
+        <!-- <#?php echo do_shortcode("[rev_slider alias='homeSlide']"); ?> -->
+      </div>
+      <div class="hero-arrow-down">
+        <div class="chevron"></div>
       </div>
     </div>
     
-    <div class="row">
-      <div class="large-8 medium-8 columns">
-
+    <div class="row ctas_row">
+      <div class="large-6 medium-6 columns">
+        <figure class="effect-oscar">
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/reports_bg.jpg" alt="Fishing Reports"/>
+          <figcaption>
+            <h2>Fishing <span>Reports</span></h2>
+            <p>Get the latest intel from our guides</p>
+            <a href="#">View more</a>
+          </figcaption>     
+        </figure>
       </div>
-      
-         
-          <?php
-            $mypost = array( 'post_type' => 'report','orderby' => 'menu_order');
-            $loop = new WP_Query( $mypost );
-          ?>
-          <?php while ( $loop->have_posts() ) : $loop->the_post();?>
-             
-                <div class="large-4 medium-4 columns"> 
-                  <h3><?php the_title(); ?></h3>                     
-                  <ul class="species_list">
-                    <?php 
-                      $balls = get_post_meta( $post->ID, '_cmb2_species_multicheckbox', true );
-                      foreach($balls as $term): ?>
-                        <li class="<?php echo $term; ?> species_box">
-                          <img src="<?php echo bloginfo('template_directory'); ?>/images/species_<?php echo $term?>.jpg " />
-                        </li>
-                    <?php endforeach; ?>
-                  </ul>   
-                </div>                 
-              
-          <?php endwhile; ?>
+      <div class="large-6 medium-6 columns">
+        <figure class="effect-oscar">
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/events_bg.jpg" alt="Fishing Events"/>
+          <figcaption>
+            <h2>Fishing <span>Events</span></h2>
+            <p>See What's Going On</p>
+            <a href="#">View more</a>
+          </figcaption>     
+        </figure>
       </div>
     </div>
 
-
-
+  
     <div class="row">
       <div class="large-8 medium-8 columns">
         <h5>Here&rsquo;s your basic grid:</h5>
@@ -154,5 +153,5 @@
       </div>
     </div>
 
-  </body>
+
 <?php get_footer(); ?>

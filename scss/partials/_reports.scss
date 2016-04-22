@@ -1,3 +1,187 @@
+/* ============================================================
+  ARCHIVE PAGE
+============================================================ */
+
+.river_archive_hero{
+  background-image: url(../images/oregon_map.jpg);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #3085a3;
+  padding-top: 126px;
+  text-align: center;
+  height: calc(100vh - 60%);
+  img{
+    opacity: 0.8;
+  }
+}
+.report_feed_container{
+  margin-bottom: 2.0em;
+}
+.report_feed{
+  @include clearfix;
+  height:400px;
+  overflow: hidden;
+  figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    min-width: 320px;
+    width: 100%;
+    height:100%;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+    margin:0;
+    object-fit: cover;
+  }
+
+  figure img {
+    position: relative;
+    display: block;
+    width:100%;
+    height: auto;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.8;
+    object-fit: cover;
+  }
+
+  figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  figure figcaption::before,
+  figure figcaption::after {
+    pointer-events: none;
+  }
+
+  figure figcaption,
+  figure figcaption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Anchor will cover the whole item by default */
+  /* For some effects it will show as a button */
+  figure figcaption > a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+  }
+
+  figure h2 {
+    word-spacing: -0.15em;
+    font-weight: 300;
+  }
+
+  figure h2 span {
+    font-weight: 800;
+  }
+
+  figure h2,
+  figure p {
+    margin: 0;
+  }
+
+  figure p {
+    letter-spacing: 1px;
+    font-size: 68.5%;
+  }
+  /*---------------*/
+  /***** oscar_report *****/
+  /*---------------*/
+
+  figure.effect-oscar_report {
+    background: -webkit-linear-gradient(45deg, #22682a 0%, #9b4a1b 40%, #3a342a 100%);
+    background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
+  }
+
+  figure.effect-oscar_report img {
+    opacity: 0.9;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+  }
+
+  figure.effect-oscar_report figcaption {
+    padding: 3em;
+    background-color: rgba(58,52,42,0.7);
+    -webkit-transition: background-color 0.35s;
+    transition: background-color 0.35s;
+  }
+
+  figure.effect-oscar_report figcaption::before {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    border: 1px solid #fff;
+    content: '';
+  }
+
+  figure.effect-oscar_report h2 {
+    margin: -6% 0 10px 0;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+    @include breakpoint(1600px) {
+      margin: 15% 0 10px 0
+    }
+    @include breakpoint(639px down) {
+      margin: 30% 0 10px 0
+    }
+  }
+
+  figure.effect-oscar_report figcaption::before,
+  figure.effect-oscar_report p {
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  figure.effect-oscar_report:hover h2 {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    @include breakpoint(1600px) {
+      // margin: 1% 0 10px 0
+    }
+  }
+
+  figure.effect-oscar_report:hover figcaption::before,
+  figure.effect-oscar_report:hover p {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  figure.effect-oscar_report:hover figcaption {
+    background-color: rgba(58,52,42,0);
+  }
+
+  figure.effect-oscar_report:hover img {
+    opacity: 0.4;
+  }
+}
+/* End of callout specific hover effects */
+.interior_hero{
+  margin-bottom: 2.0em;
+}
+
 .species_box{
   width: 100%;
 }
@@ -25,9 +209,19 @@ ul.species_list{
   padding:0!important;
 }
 
+.sidebar{
+  padding: 0 1.5em;
+  h3{
+    margin-top: 2.0em;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+}
+
 
 /* ============================================================
-  SECTIONS
+  SINGLE SECTIONS
 ============================================================ */
 section.module:last-child {
   margin-bottom: 0;

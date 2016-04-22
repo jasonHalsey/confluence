@@ -20,17 +20,23 @@
 
 /*  Enqueue scripts
 /* ------------------------------------ */ 
+
+  function jquery_enqueue() {
+      wp_deregister_script('jquery');
+      wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false, null);
+      wp_enqueue_script('jquery');
+  }
+  if (!is_admin()) add_action('wp_enqueue_scripts', 'jquery_enqueue', 11);
+
+
 	function wpb_adding_scripts() {
 
 		$vars = "value";
-
-	  wp_register_script('jquery', get_stylesheet_directory_uri() . '/bower_components/jquery/dist/jquery.js');
 	  wp_register_script('what', get_stylesheet_directory_uri() . '/bower_components/what-input/what-input.js');
 	  wp_register_script('foundation', get_stylesheet_directory_uri() . '/bower_components/foundation-sites/dist/foundation.js');
 	  wp_register_script('app', get_stylesheet_directory_uri() . '/js/app.js');
 	  wp_register_script('mapbox', 'https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.js');
 
-	  wp_enqueue_script('jquery');
 	  wp_enqueue_script('what');
 	  wp_enqueue_script('foundation');
 	  wp_enqueue_script('app');

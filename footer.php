@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="row">
     <div class="small-12 medium-6 medium-push-6 columns">
-      <p class="logo show-for-small-only"><i class="icon-reel_icon"></i> Confluence</p> 
+      <p class="footer_logo show-for-small-only"><i class="icon-reel_icon"></i> Confluence</p> 
       <form class="footer-form">
         <div class="row">
           <div class="medium-9 medium-push-3 columns">
@@ -26,7 +26,7 @@
       </form>
     </div>
     <div class="small-12 medium-6 medium-pull-6 columns">
-      <p class="logo hide-for-small-only"><i class="icon-solo_shield"></i>Confluence Fly Shop</p> 
+      <p class="footer_logo hide-for-small-only"><i class="icon-solo_shield"></i>Confluence Fly Shop</p> 
       <p class="footer-links">
         <a href="#">Home</a>
         <a href="#">Blog</a>
@@ -42,7 +42,9 @@
     </div>
   </div>
 </footer>
-</div>
-  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+
+  
 <?php wp_footer(); ?>
+</body>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
 </html>

@@ -9,14 +9,12 @@
     <?php wp_head(); ?>
   </head>
 <body>
-	<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-  	<button class="menu-icon" type="button" data-toggle></button>
-  	<div class="title-bar-title">Menu</div>
-	</div>
-
-<div data-sticky-container>
-
-	<div class="top-bar sticky" id="main-menu" data-sticky data-options="marginTop:0;stickTo:top" style="width:100%">
+<div class="fixed_nav">
+  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+  <div class="top-bar" id="main-menu">
 	  <div class="top-bar-left">
 	    <ul class="dropdown menu" data-dropdown-menu>
 	      <li class="menu-text">Site Title</li>
@@ -26,3 +24,4 @@
 	    <?php wp_nav_menu( array( 'menu_id' => 'menu', 'theme_location' => 'primary-menu', 'menu_class' => 'show', 'container' => false ) ); ?>
 	  </div>
 	</div>
+</div>

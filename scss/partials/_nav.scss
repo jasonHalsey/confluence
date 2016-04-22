@@ -1,13 +1,18 @@
-.sticky-container {
-    height:0;
-  }
-
+.fixed_nav{
+  width:100%;
+  position:fixed;
+  z-index:99;
+}
 // for presentation only
-body {marging-top: 2rem;}
+// body {margin-top: 2rem;}
 
 // $menu-background: #333;
 $menu-background: $blackTrans;
 
+.fadeInBlock {
+  opacity:0;
+  transition: all 0.2s ease-in-out;
+}
 .title-bar {
   background: $menu-background;
   padding: 0.9rem;

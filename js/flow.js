@@ -33,10 +33,10 @@ weatherFn = function(url) {
       $('#weather_icon').addClass('diw-cloud-hail-sun')
     }
     else if(weatherWeather == "Mostly Sunny") {
-      $('#weather_icon').addClass('diw-cloud-rain-2-sun')
+      $('#weather_icon').addClass('diw-cloud-sun')
     }
     else if(weatherWeather == "Mostly Clear") {
-      $('#weather_icon').addClass('diw-cloud-rain-2-sun')
+      $('#weather_icon').addClass('diw-cloud-sun')
     }
     else if(weatherWeather == "Sunny") {
       $('#weather_icon').addClass('diw-sun')
@@ -48,7 +48,7 @@ weatherFn = function(url) {
       $('#weather_icon').addClass('diw-cloud-rain-2-sun')
     }
     else {
-      $('#weather_icon').addClass('diw-cloud-rain-2-sun')
+      $('#weather_icon').addClass('diw-cloud-sun')
     }
 
 
@@ -65,7 +65,6 @@ $.getJSON(flowAPI, function (json) {
   var flowLong = baseString.sourceInfo.geoLocation.geogLocation.longitude
   weatherFn("http://forecast.weather.gov/MapClick.php?lat=" + flowLat + "&lon=" + flowLong + "&FcstType=json");
   var map = L.mapbox.map('map-one', 'mapbox.outdoors').setView([flowLat,flowLong], 14);
-
   var str = locationName;
   function getWords(str) {
     return str.split(/\s+/).slice(0,2).join(" ");
