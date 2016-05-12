@@ -1,6 +1,35 @@
 <footer class="footer">
   <div class="row">
-    <div class="small-12 medium-6 medium-push-6 columns">
+    
+    <div class="small-12 medium-3  columns">
+      <p class="footer_logo hide-for-small-only"><i class="icon-solo_shield"></i>Confluence Fly Shop</p> 
+      <p class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">Fishing Reports</a>
+        <a href="#">Contact</a>
+      </p>
+      <ul class="inline-list social">
+        <a href="#"><i class="icon-facebook"></i></a>
+        <a href="#"><i class="icon-twitter"></i></a>
+        <a href="#"><i class="icon-instagram"></i></a>
+      </ul>
+      <p class="copywrite">&copy; Confluence Fly Shop <?php echo date("Y"); ?></p>
+    </div>
+
+
+
+    <div class="small-12 medium-3 columns hours-block">
+      <p class="hours-title">Shop Hours</p> 
+      <p class="hour-links">
+        Mon - Fri 8:00am - 8:00pm
+      </p>
+      <p class="hour-links">
+        Sat - Sun 10:00am - 8:00pm
+      </p>
+    </div>
+
+    <div class="small-12 medium-6  columns">
       <p class="footer_logo show-for-small-only"><i class="icon-reel_icon"></i> Confluence</p> 
       <form class="footer-form">
         <div class="row">
@@ -25,21 +54,9 @@
         </div>
       </form>
     </div>
-    <div class="small-12 medium-6 medium-pull-6 columns">
-      <p class="footer_logo hide-for-small-only"><i class="icon-solo_shield"></i>Confluence Fly Shop</p> 
-      <p class="footer-links">
-        <a href="#">Home</a>
-        <a href="#">Blog</a>
-        <a href="#">River Reports</a>
-        <a href="#">Contact</a>
-      </p>
-      <ul class="inline-list social">
-        <a href="#"><i class="icon-facebook"></i></a>
-        <a href="#"><i class="icon-twitter"></i></a>
-        <a href="#"><i class="icon-instagram"></i></a>
-      </ul>
-      <p class="copywrite">&copy; Confluence Fly Shop <?php echo date("Y"); ?></p>
-    </div>
+
+
+
   </div>
 </footer>
 

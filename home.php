@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: home
+*/
+get_header(); ?>
 
     <div class="hero_row">
       <div class="large-12 columns hero">
@@ -19,7 +23,7 @@
           <figcaption>
             <h2>Fishing <span>Reports</span></h2>
             <p>Get the latest intel from our guides</p>
-            <a href="#">View more</a>
+            <a href="<?php echo home_url( '/river-reports' ); ?>">View more</a>
           </figcaption>     
         </figure>
       </div>
@@ -27,8 +31,31 @@
         <figure class="effect-oscar">
           <img src="<?php echo bloginfo('template_directory'); ?>/images/events_bg.jpg" alt="Fishing Events"/>
           <figcaption>
-            <h2>Fishing <span>Events</span></h2>
+            <h2>Shop <span>Events</span></h2>
             <p>See What's Going On</p>
+            <a href="#">View more</a>
+          </figcaption>     
+        </figure>
+      </div>
+    </div>
+
+    <div class="row ctas_row">
+      <div class="large-6 medium-12 columns">
+        <figure class="effect-oscar">
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/blog_bg.jpg" alt="Fishing Reports"/>
+          <figcaption>
+            <h2>Blog <span>Posts</span></h2>
+            <p>Get the latest intel from our guides</p>
+            <a href="<?php echo home_url( '/river-reports' ); ?>">View more</a>
+          </figcaption>     
+        </figure>
+      </div>
+      <div class="large-6 medium-12 columns">
+        <figure class="effect-oscar">
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/guide_bg.jpg" alt="Fishing Events"/>
+          <figcaption>
+            <h2>Guided <span>Trips</span></h2>
+            <p>Book a trip to get your adventure started</p>
             <a href="#">View more</a>
           </figcaption>     
         </figure>
@@ -149,6 +176,11 @@
           <h5>So many components, girl!</h5>
           <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
           <a href="http://foundation.zurb.com/sites/docs/" class="small button">Go to Foundation Docs</a>          
+        </div>
+        <h4>Upcoming Events</h4>
+        <div class="callout">
+
+          <?php echo do_shortcode("[ai1ec view='agenda']"); ?>
         </div>
       </div>
     </div>

@@ -1,7 +1,9 @@
 /* ============================================================
   ARCHIVE PAGE
 ============================================================ */
-
+.interior_hero{
+  margin-bottom: 2.0em;
+}
 .river_archive_hero{
   background-image: url(../images/oregon_map.jpg);
   position: relative;
@@ -16,13 +18,12 @@
     opacity: 0.8;
   }
 }
-.report_feed_container{
-  margin-bottom: 2.0em;
-}
+
 .report_feed{
   @include clearfix;
   height:400px;
   overflow: hidden;
+  margin:0 0 1.0em 0;
   figure {
     position: relative;
     float: left;
@@ -33,7 +34,7 @@
     background: #3085a3;
     text-align: center;
     cursor: pointer;
-    margin:0;
+    
     object-fit: cover;
   }
 
@@ -88,6 +89,7 @@
 
   figure h2 span {
     font-weight: 800;
+    display: block;
   }
 
   figure h2,
@@ -119,6 +121,9 @@
     background-color: rgba(58,52,42,0.7);
     -webkit-transition: background-color 0.35s;
     transition: background-color 0.35s;
+    &:hover{
+      padding-top: 30%;
+    }
   }
 
   figure.effect-oscar_report figcaption::before {
@@ -132,7 +137,8 @@
   }
 
   figure.effect-oscar_report h2 {
-    margin: -6% 0 10px 0;
+    margin: 0% 0 10px 0;
+    line-height: 1.0em;
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
     -webkit-transform: translate3d(0,100%,0);
@@ -158,7 +164,14 @@
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     @include breakpoint(1600px) {
-      // margin: 1% 0 10px 0
+      margin: 15% 0 10px 0;
+    }
+  }
+
+  figure.effect-oscar_report h2.long_h2{
+    margin: 0% 0 10px 0;
+    &:hover{
+      margin: 30% 0 10px 0;
     }
   }
 
@@ -178,9 +191,6 @@
   }
 }
 /* End of callout specific hover effects */
-.interior_hero{
-  margin-bottom: 2.0em;
-}
 
 .species_box{
   width: 100%;

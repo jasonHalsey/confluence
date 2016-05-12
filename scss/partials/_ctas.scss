@@ -7,10 +7,7 @@ figure {
   background: #3085a3;
   text-align: center;
   cursor: pointer;
-  margin:0;
-  @media only screen and (max-width: 40em) {
-    margin: 0 0 1.0em 0;
-  }
+  margin: 0 0 1.0em 0;
 }
 
 figure img {
@@ -107,11 +104,17 @@ figure.effect-oscar figcaption::before {
 }
 
 figure.effect-oscar h2 {
-  margin: 0 0 10px 0;
+  margin: 12% 0 10px 0;
   -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
   -webkit-transform: translate3d(0,100%,0);
   transform: translate3d(0,100%,0);
+  @include breakpoint(medium down) {
+      margin: 15% 0 10px 0;
+  }
+  @include breakpoint(small down) {
+      margin: 7% 0 10px 0;
+  }
 }
 
 figure.effect-oscar figcaption::before,

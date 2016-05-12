@@ -1,14 +1,14 @@
 .row{
     position:relative;
 }
-.ctas_row{
-    margin-bottom: 2.0em;
-}
+// .ctas_row{
+//     margin-bottom: 2.0em;
+// }
 .columns{
     position:relative;
 }
 .logo{
-    width:40%;
+    width:20%;
     height: calc(100vh);
     position: absolute;
     left: 50%;
@@ -19,6 +19,16 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+    }
+}
+.title_logo{
+    width:300px;
+    // transition: display 1.0s ease;
+    // display: none!important;
+    img{
+        display: block;
+        width:100%;
+        height:auto;
     }
 }
 .hero_row{

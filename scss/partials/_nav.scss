@@ -29,6 +29,8 @@ $menu-background: $blackTrans;
       a {
         color: #fff;
         font-size: 1.25em;
+        font-family: $primayHeaderFont;
+        font-weight: 600; 
       }
     }
   }
@@ -36,7 +38,7 @@ $menu-background: $blackTrans;
 
 .menu-text {
   color: #fff;
-  
+
   @media only screen and (max-width: 40em) {
     display: none !important;
   }

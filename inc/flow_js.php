@@ -1,8 +1,9 @@
 <script type="text/javascript">
 var usgsNum = '<?php echo $usgs_site ?>';
 
-var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=14076500&parameterCd=' + usgsNum + '&siteType=ST';
+var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=' + usgsNum + '&parameterCd=00065&siteType=ST';
 
+   
 weatherFn = function(url) {
   jQuery.getJSON(url, function (json) {
 
