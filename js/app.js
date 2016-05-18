@@ -18,6 +18,7 @@ jQuery(document).ready(function() {
     h2.html(text.join(' '));
   });
 
+  moveCalNav();
   // jQuery('.title_logo').fadeOut();
 }); //End Main Doc Ready
 
@@ -42,10 +43,20 @@ jQuery(window).scroll(function(){
 // });
 
 jQuery(window).scroll(function() {
+
+  if (jQuery('body').hasClass('home')){
     if (jQuery(window).scrollTop() > 100) {
         jQuery('.title_logo').slideDown('slow');
     }
     else {
         jQuery('.title_logo').slideUp('slow');
     }
+  }
+
 });
+
+  function moveCalNav() {
+    var translate = jQuery('.ai1ec-pull-left');
+    jQuery(translate).detach();
+    jQuery('.ai1ec-calendar').prepend($(translate));
+  }

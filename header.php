@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/app.css">
     <?php wp_head(); ?>
   </head>
-<body>
+<body <?php body_class(); ?>>
 <div class="fixed_nav">
   <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle></button>
