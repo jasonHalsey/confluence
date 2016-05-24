@@ -1,9 +1,14 @@
+body.home{
+    .title_logo{
+        display:none;
+    }
+    #phone_container{
+        display:none;
+    }
+}
 .row{
     position:relative;
 }
-// .ctas_row{
-//     margin-bottom: 2.0em;
-// }
 .columns{
     position:relative;
 }
@@ -28,6 +33,15 @@
         width:100%;
         height:auto;
     }
+}
+
+#phone_container{
+    font-family: $primayHeaderFont;
+    color: #fff;
+    font-size: 2.5em;
+    text-align: right;
+    font-weight: 600;
+    padding-right:2.0em;
 }
 .hero_row{
     position:relative;

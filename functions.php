@@ -48,6 +48,91 @@
 	}
 	add_action( 'wp_footer', 'wpb_adding_scripts' ); 
 
+
+/*  Theme Options Page
+/* ------------------------------------ */ 
+
+
+  function add_theme_menu_item()
+  {
+    add_menu_page("Shop Options", "Shop Options", "manage_options", "theme-panel", "theme_settings_page", null, 99);
+  }
+
+  add_action("admin_menu", "add_theme_menu_item");
+
+
+
+  function theme_settings_page()
+  {
+      ?>
+        <div class="wrap">
+        <h1>Shop Options</h1>
+        <form method="post" action="options.php" class="theme_options">
+            <?php
+                settings_fields("section");
+                do_settings_sections("theme-options");      
+                submit_button(); 
+            ?>          
+        </form>
+      </div>
+    <?php
+  }
+
+  function hours_line_1()
+  {
+    ?>  
+        <input type="text" name="hours_line_1" id="hours_line_1" value="<?php echo get_option('hours_line_1'); ?>" />      
+      <?php
+  }
+
+  function hours_line_2()
+  {
+    ?>
+        <input type="text" name="hours_line_2" id="hours_line_2" value="<?php echo get_option('hours_line_2'); ?>" />
+      <?php
+  }
+
+  function hours_line_3()
+  {
+    ?>
+        <input type="text" name="hours_line_3" id="hours_line_3" value="<?php echo get_option('hours_line_3'); ?>" />
+      <?php
+  }
+
+  function phone_number()
+  {
+    ?>
+        <input type="text" name="phone_number" id="phone_number" value="<?php echo get_option('phone_number'); ?>" />
+      <?php
+  }
+
+  function display_theme_panel_fields()
+  {
+    add_settings_section("section", "Confluence Shop Settings", null, "theme-options");
+
+    add_settings_field("phone_number", "Phone Number", "phone_number", "theme-options", "section");
+    add_settings_field("hours_line_1", "Hours Line 1", "hours_line_1", "theme-options", "section");
+    add_settings_field("hours_line_2", "Hours Line 2", "hours_line_2", "theme-options", "section");
+    add_settings_field("hours_line_3", "Hours Line 3", "hours_line_3", "theme-options", "section");
+
+
+    register_setting("section", "phone_number");
+    register_setting("section", "hours_line_1");
+    register_setting("section", "hours_line_2"); 
+    register_setting("section", "hours_line_3");   
+  }
+
+  add_action("admin_init", "display_theme_panel_fields");
+
+  add_action('admin_head', 'my_custom_admin_css');
+
+  function my_custom_admin_css() {
+    echo '<style>
+      form input[type=text]{width:50%;}
+    </style>';
+  }
+
+
 	/* Custom Post Types
 	/* ------------------------------------ */ 
 
@@ -72,7 +157,7 @@ function post_type_report()
     'capability_type' => 'post',
     'hierarchical' => true,
     'menu_position' => null,
-    'supports' => array('title')
+    'supports' => array('title','excerpt')
     ); 
   register_post_type('report',$args);
   flush_rewrite_rules();

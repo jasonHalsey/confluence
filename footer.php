@@ -21,12 +21,21 @@
 
     <div class="small-12 medium-3 columns hours-block">
       <p class="hours-title">Shop Hours</p> 
-      <p class="hour-links">
-        Mon - Fri 8:00am - 8:00pm
+      <p id="hr_1" class="hour-links">
+        <?php echo $GLOBALS['hours_line_1'] ?>
       </p>
-      <p class="hour-links">
-        Sat - Sun 10:00am - 8:00pm
-      </p>
+      <?php $hr_line2 = $GLOBALS['hours_line_2'];
+            if( !empty( $hr_line2 ) ): ?>
+        <p class="hour-links">
+          <?php echo $GLOBALS['hours_line_2'] ?>
+        </p>
+      <?php endif; ?>
+      <?php $hr_line3 = $GLOBALS['hours_line_3'];
+            if( !empty( $hr_line3 ) ): ?>
+        <p class="hour-links">
+           <?php echo $GLOBALS['hours_line_3'] ?>
+        </p>
+       <?php endif; ?>
     </div>
 
     <div class="small-12 medium-6  columns">

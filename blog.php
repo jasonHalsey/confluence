@@ -18,7 +18,7 @@ Template Name: Blog
 
       <div class="column">
         <div class="report_feed">
-          <figure class="effect-oscar_report">
+          <figure class="effect-sarah">
 
           <?php 
             $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );

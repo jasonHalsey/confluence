@@ -10,6 +10,7 @@
     <?php wp_head(); ?>
   </head>
 <body <?php body_class(); ?>>
+<?php get_template_part( 'inc/options'); ?>
 <div class="fixed_nav">
   <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle></button>
@@ -27,6 +28,9 @@
 	    </ul>
 	  </div>
 	  <div class="top-bar-right">
+      <div id="phone_container">
+        <?php echo $GLOBALS['phone_number'] ?>
+      </div>
 	    <?php wp_nav_menu( array( 'menu_id' => 'menu', 'theme_location' => 'primary-menu', 'menu_class' => 'show', 'container' => false ) ); ?>
 	  </div>
 	</div>

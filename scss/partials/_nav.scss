@@ -20,7 +20,7 @@ $menu-background: $blackTrans;
 
 .top-bar {
   background: $menu-background;
-  padding: 1.75em 0;
+  padding: 1.25em 0 1.75em;
   ul {
     background: none;
     padding-right:4.0em;
@@ -46,7 +46,7 @@ $menu-background: $blackTrans;
 
 @media only screen and (min-width: 40em) {
   .menu:last-child {
-    border-left: 1px solid #4e4e4e;
+    // border-left: 1px solid #4e4e4e;
   }
 
   .menu:first-child {
@@ -54,6 +54,7 @@ $menu-background: $blackTrans;
   }
 
   .menu {
+
     li:not(:last-child) {
       border-right: 1px solid #4e4e4e;
     }
