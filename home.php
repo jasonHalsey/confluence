@@ -65,43 +65,34 @@ get_header(); ?>
   
     <div class="row">
       <div class="large-8 medium-8 columns">
-        <h5>Here&rsquo;s your basic feed:</h5>
-        <!-- Grid Example -->
-
-        <!-- <div class="row">
-          <div class="large-12 columns">
-            <div class=" callout">
-              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.callout element so you can see where the columns are - it's not required at all for the grid.</p>
-            </div>
-          </div>
-        </div>
-      </div>   -->
-
-
        <div class="row">
         <div class="large-12 columns">
           <?php query_posts( array(
              'post_type' => array( 'post', 'report' ),
-              'orderby' => modified,
-             // 'cat' => 3,
+             'orderby' => modified,
              'showposts' => 4
              )
              ); ?>
             <?php while ( have_posts() ) : the_post(); ?>
 
-
-            <a href="<?php the_permalink(); ?> "><?php the_title(); ?></a>
-
-            <div class="excerpt callout">
-              <?php $report = get_post_meta( $post->ID, '_cmb2_guide_report', true ); ?>
-              <?php
-                if (!empty($report)) {
-                echo $report;
-                }else {
-                  echo get_the_excerpt();
-                }
-              ?>
-              <a href="<?php the_permalink(); ?> ">Read More</a>
+            <div class="excerpt callout feed_block">
+              <h2><a href="<?php the_permalink(); ?> "><?php the_title(); ?></a></h2> 
+              <div class="report_block">
+                <?php $report = get_post_meta( $post->ID, '_cmb2_guide_report', true ); ?>
+                <?php
+                  if (!empty($report)) {
+                  echo wp_trim_words($report, 55 ); 
+                  }else {
+                    echo get_the_excerpt();
+                  }
+                ?>
+                <div class="author_block">
+                <a href="<?php the_permalink(); ?> ">Read More</a>
+                <?php mt_profile_img() ?>
+                <p>By: <?php echo get_the_author_link(); ?></p>
+              </div>
+                
+              </div>
             </div>
 
           <?php endwhile; ?>   

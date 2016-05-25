@@ -1,3 +1,6 @@
+body{
+    font-family: $primayBodyFont;
+}
 body.home{
     .title_logo{
         display:none;
@@ -6,11 +9,17 @@ body.home{
         display:none;
     }
 }
+p{
+    font-family: $primayBodyFont;
+}
 .row{
     position:relative;
 }
 .columns{
     position:relative;
+}
+.callout{
+    border:none;
 }
 .logo{
     width:20%;
@@ -34,14 +43,66 @@ body.home{
         height:auto;
     }
 }
+#yelp{
+    width:100%!important;
+}
+div.author_block{
+    display: block;
+    font-size: 0.75em;
+    margin-top:2.0em;
+    a{
+        background-color: $dk_gray;
+        color:#fff;
+        font-size:1.75em;
+        padding: 0.20em 0.75em;
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 3%;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+    img{
+        width:7%;
+        height:auto;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 63%;
+    }
+    p{
+        display: inline-block;
+        vertical-align: middle;
+        padding-top:3.0em;
+    }
 
+}
+div.report_block{
+    display:block;
+    float:right;
+    width:98%;
+    padding: 1.0em;
+}
+div.feed_block{
+    @include clearfix;
+    h2{
+        font-family: $primayHeaderFont;
+        font-weight: 600;
+        a{
+            color:$dk_gray;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+}
 #phone_container{
     font-family: $primayHeaderFont;
     color: #fff;
     font-size: 2.5em;
     text-align: right;
     font-weight: 600;
-    padding-right:2.0em;
+    padding-right:0.75em;
 }
 .hero_row{
     position:relative;

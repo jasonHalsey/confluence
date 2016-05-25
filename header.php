@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600|Roboto:400,400italic,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700|Roboto:400,700' rel='stylesheet' type='text/css'>
     <title>Confluence Fly Shop</title>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/app.css">
     <?php wp_head(); ?>
