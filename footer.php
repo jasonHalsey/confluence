@@ -3,12 +3,13 @@
     
     <div class="small-12 medium-3  columns">
       <p class="footer_logo hide-for-small-only"><i class="icon-solo_shield"></i>Confluence Fly Shop</p> 
-      <p class="footer-links">
+      <p class="footer_logo show-for-small-only"><i class="icon-reel_icon"></i> Confluence</p> 
+<!--       <p class="footer-links">
         <a href="#">Home</a>
         <a href="#">Blog</a>
         <a href="#">Fishing Reports</a>
         <a href="#">Contact</a>
-      </p>
+      </p> -->
       <ul class="inline-list social">
         <a href="#"><i class="icon-facebook"></i></a>
         <a href="#"><i class="icon-twitter"></i></a>
@@ -19,7 +20,7 @@
 
 
 
-    <div class="small-12 medium-3 columns hours-block">
+    <div class="small-12 medium-3 columns drop-col hours-block">
       <p class="hours-title">Shop Hours</p> 
       <p id="hr_1" class="hour-links">
         <?php echo $GLOBALS['hours_line_1'] ?>
@@ -38,23 +39,29 @@
        <?php endif; ?>
     </div>
 
-    <div class="small-12 medium-6  columns">
-      <p class="footer_logo show-for-small-only"><i class="icon-reel_icon"></i> Confluence</p> 
+    <div class="small-12 medium-3 drop-col columns">
+      <p class="hours-title">Shop Address</p> 
+      <p class="hour-links">
+      375 SW Powerhouse Dr Suite 100<br />Bend, OR 97702
+      </p>
+      <p class="hours-title">Shop Phone</p> 
+      <p class="hour-links">
+        <?php echo $GLOBALS['phone_number'] ?>
+      </p>
+    </div>
+
+    <div class="small-12 medium-3 drop-col columns">
+      
       <form class="footer-form">
         <div class="row">
           <div class="medium-9 medium-push-3 columns">
+           <p class="hours-title">Newsletter Sign-Up</p> 
             <label>
-              <label for="email" class="contact">Contact</label>
+              
               <input type="email" id="email" placeholder="Email Address" />
             </label>
           </div>
         </div>
-        <div class="row">
-          <div class="medium-9 medium-push-3 columns">
-            <label>
-              <textarea rows="5" id="message" placeholder="Message"></textarea>
-            </label>
-          </div>
           <div class="row">
             <div class="medium-9 medium-push-3 columns">
               <button class="submit" type="submit" value="Submit">Send</button>

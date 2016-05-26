@@ -13,14 +13,15 @@
 <?php get_template_part( 'inc/options'); ?>
 <div class="fixed_nav">
   <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+  <img class="show-for-small-only" src="<?php echo bloginfo('template_directory'); ?>/images/title_shield.svg" alt="Confluence Fly Shop"/>
     <button class="menu-icon" type="button" data-toggle></button>
+
     <div class="title-bar-title">Menu</div>
   </div>
   <div class="top-bar" id="main-menu">
 	  <div class="top-bar-left">
 	    <ul class="dropdown menu" data-dropdown-menu>
-	      <!-- <li class="menu-text"><a href="<#?php echo home_url( '/' ); ?>">Site Title</a></li> -->
-        <li class="title_logo">
+        <li class="title_logo hide-for-small-only">
           <a href="<?php echo home_url( '/' ); ?>">
             <img src="<?php echo bloginfo('template_directory'); ?>/images/title_shield.svg" alt="Confluence Fly Shop"/>
           </a>
@@ -28,7 +29,7 @@
 	    </ul>
 	  </div>
 	  <div class="top-bar-right">
-      <div id="phone_container">
+      <div id="phone_container" class="hide-for-small-only">
         <?php echo $GLOBALS['phone_number'] ?>
       </div>
 	    <?php wp_nav_menu( array( 'menu_id' => 'menu', 'theme_location' => 'primary-menu', 'menu_class' => 'show', 'container' => false ) ); ?>
