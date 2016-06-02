@@ -33,7 +33,7 @@ get_header(); ?>
           <figcaption>
             <h2>Shop <span>Events</span></h2>
             <p>See What's Going On</p>
-            <a href="#">View more</a>
+            <a href="<?php echo home_url( '/events' ); ?>">View more</a>
           </figcaption>     
         </figure>
       </div>
@@ -42,7 +42,7 @@ get_header(); ?>
     <div class="row ctas_row">
       <div class="large-6 medium-12 columns">
         <figure class="effect-oscar">
-          <img src="<?php echo bloginfo('template_directory'); ?>/images/blog_bg.jpg" alt="Fishing Reports"/>
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/blog_bg.jpg" alt="Blog Posts"/>
           <figcaption>
             <h2>Blog <span>Posts</span></h2>
             <p>Get the latest intel from our guides</p>
@@ -52,11 +52,11 @@ get_header(); ?>
       </div>
       <div class="large-6 medium-12 columns">
         <figure class="effect-oscar">
-          <img src="<?php echo bloginfo('template_directory'); ?>/images/guide_bg.jpg" alt="Fishing Events"/>
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/guide_bg.jpg" alt="Guided Trips"/>
           <figcaption>
             <h2>Guided <span>Trips</span></h2>
             <p>Book a trip to get your adventure started</p>
-            <a href="#">View more</a>
+            <a href="http://www.deepcanyonoutfitters.com">View more</a>
           </figcaption>     
         </figure>
       </div>

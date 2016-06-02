@@ -7,8 +7,10 @@ Template Name: calendar event
 
 <?php while ( have_posts() ) : the_post(); ?>
   <?php if ( is_single() ) : ?>
-
-  <section class="module parallax parallax-1">
+  <?php
+    $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+  ?>
+  <section class="module parallax parallax-1" style="background-image:url(<?php echo $url; ?>);">
     <div class="container">
       <h1><?php the_title() ?></h1>
     </div>

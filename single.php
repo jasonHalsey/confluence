@@ -20,9 +20,14 @@ Template Name: single
         <div class="row">
           <div class="large-12 columns">
             <div class="primary callout">
-            <h1><?php the_title(); ?></h1>
+            <h1 class="main_title"><?php the_title(); ?></h1>
+
+<?php if (function_exists('custom_breadcrumbs')) custom_breadcrumbs(); ?>
               <p>
                 <?php the_content(); ?>
+              </p>
+              <p>
+              <?php echo do_shortcode("[sgmb id=1]"); ?>
               </p>
             </div>
           </div>

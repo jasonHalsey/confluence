@@ -11,6 +11,11 @@ body.home{
 }
 p{
     font-family: $primayBodyFont;
+    line-height: 2.5em
+}
+h4{
+    font-family: $primayHeaderFont;
+    font-weight: 700;
 }
 .row{
     position:relative;
