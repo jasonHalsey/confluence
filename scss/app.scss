@@ -41,7 +41,6 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 @import 'partials/variables';
-@import 'partials/colors';
 @import 'partials/nav';
 @import 'partials/footer';
 @import 'partials/fonts';
@@ -50,3 +49,5 @@
 @import 'partials/ctas';
 @import 'partials/calendar';
 @import 'partials/blog';
+@import 'partials/back-to-top';
+@import 'partials/contact';

@@ -22,12 +22,15 @@ Template Name: single
             <div class="primary callout">
             <h1 class="main_title"><?php the_title(); ?></h1>
 
-<?php if (function_exists('custom_breadcrumbs')) custom_breadcrumbs(); ?>
+            <?php if (function_exists('custom_breadcrumbs')) custom_breadcrumbs(); ?>
+              <p class="blog_author">By: <?php echo get_the_author_link(); ?> &nbsp;&mdash;&nbsp;
+                <span class="entry-date"><?php echo get_the_date(); ?></span>
+              </p>
               <p>
                 <?php the_content(); ?>
               </p>
               <p>
-              <?php echo do_shortcode("[sgmb id=1]"); ?>
+                <?php echo do_shortcode("[sgmb id=1]"); ?>
               </p>
             </div>
           </div>

@@ -1,0 +1,13 @@
+.contact_archive_hero{
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: $blackish;
+  // padding-top: 126px;
+  text-align: center;
+  height: calc(100vh - 50%);
+  img{
+    opacity: 0.8;
+  }
+}

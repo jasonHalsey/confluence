@@ -13,10 +13,9 @@
 <?php get_template_part( 'inc/options'); ?>
 <div class="fixed_nav">
   <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-  <img class="show-for-small-only" src="<?php echo bloginfo('template_directory'); ?>/images/title_shield.svg" alt="Confluence Fly Shop"/>
+    <img class="show-for-small-only" src="<?php echo bloginfo('template_directory'); ?>/images/title_shield.svg" alt="Confluence Fly Shop"/>
     <button class="menu-icon" type="button" data-toggle></button>
-
-    <div class="title-bar-title">Menu</div>
+    <div class="title-bar-title"></div>
   </div>
   <div class="top-bar" id="main-menu">
 	  <div class="top-bar-left">

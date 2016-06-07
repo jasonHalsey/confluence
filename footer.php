@@ -57,7 +57,6 @@
           <div class="medium-9 medium-push-3 columns">
            <p class="hours-title">Newsletter Sign-Up</p> 
             <label>
-              
               <input type="email" id="email" placeholder="Email Address" />
             </label>
           </div>
@@ -74,6 +73,7 @@
 
 
   </div>
+  <a href="#0" class="cd-top icon-circle-up"></a>
 </footer>
 
   

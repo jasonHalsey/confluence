@@ -11,7 +11,8 @@ Template Name: Blog
 <!-- TODO: Add Backgroungd Image Header  -->
 <div class="row small-up-1 medium-up-2 large-up-3 report_feed_container">   
   <?php
-    $blog_post = array( 'orderby' => 'menu_order');
+    $blog_post = array( 'orderby' => 'post_date', 'order' => 'DESC' );
+    
     $blog_loop = new WP_Query( $blog_post );
   ?>
   <?php while ( $blog_loop->have_posts() ) : $blog_loop->the_post();?>

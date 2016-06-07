@@ -29,6 +29,11 @@ body.single-post{
   .separator{
     display:none;
   }
+  .blog_author{
+    font-family: $primayHeaderFont;
+    font-weight: 700;
+    font-size: 0.75em;
+  }
 }
 
 /*---------------*/

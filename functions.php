@@ -265,7 +265,7 @@ function custom_breadcrumbs() {
     //$separator          = '/';
     $breadcrums_id      = 'breadcrumbs';
     $breadcrums_class   = 'breadcrumbs';
-    $home_title         = 'Home';
+    $home_title         = 'Blog Home';
       
     // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
     $custom_taxonomy    = 'product_cat';
@@ -280,7 +280,7 @@ function custom_breadcrumbs() {
         echo '<ul id="' . $breadcrums_id . '" class="' . $breadcrums_class . '">';
            
         // Home page
-        echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';
+        echo '<li class="item-home"><a class="bread-link bread-home" href="' . site_url( '/blog/') . '" title="' . $home_title . '">' . $home_title . '</a></li>';
         echo '<li class="separator separator-home"> ' . $separator . ' </li>';
            
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
@@ -487,6 +487,42 @@ function custom_breadcrumbs() {
            
     }
        
+}
+
+// Image Uploader Plugin
+
+    add_filter('images_cpt','my_image_cpt');
+    function my_image_cpt(){
+        $cpts = array('page','report');
+        return $cpts;
+    }
+
+    add_filter('list_images','my_list_images',10,3);
+
+function my_list_images($list_images, $cpt){
+    global $typenow;
+    if($typenow == "report" || $cpt == "report")
+        $picts = array(
+            'image1' => '_image1',
+            'image2' => '_image2',
+            'image3' => '_image3',
+            'image4' => '_image4',
+            'image5' => '_image5',
+            'image6' => '_image6'
+        );
+    elseif ($typenow == 'page') 
+        $picts = array(
+            'image1' => '_image1'
+        );
+    else
+        $picts = array(
+            'image1' => '_image1',
+            'image2' => '_image2',
+            'image3' => '_image3',
+            'image4' => '_image4',
+            'image5' => '_image5'
+        );
+    return $picts;
 }
 
 ?>
