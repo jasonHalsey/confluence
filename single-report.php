@@ -24,7 +24,7 @@ Template Name: river_report
               <div id="weather_icon" class="card-img-top"> </div>
               <div class="card-block">
                 <h3 class="river_name">Loading...</h3>
-                <p class="weather_text card-text">Loading...</p>                
+                <p class="weather_text card-text">Loading...</p>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item weather_weather">Loading...</li>
@@ -37,8 +37,8 @@ Template Name: river_report
               <div id='map-one' class='map'>Loading Map... </div>
               </div>
               <div class="card-block">
-                <a href="#" class="card-link">NOAA Forecast</a>
-                <a href="#" class="card-link">Extendend Flow Info</a>
+                <div class="noaa_link"></div>
+                <div class="usgs_link"></div>
               </div>
             </div>
         </div>
@@ -54,6 +54,7 @@ Template Name: river_report
               foreach($balls as $term): ?>
                 <li class="<?php echo $term; ?> species_box">
                   <img src="<?php echo bloginfo('template_directory'); ?>/images/species_<?php echo $term?>.jpg " />
+                  <h6 class="species_title">&mdash;&nbsp;<?php include(locate_template('inc/species_title.php'));?>&nbsp;&mdash;</h6>
                 </li>
             <?php endforeach; ?>
           </ul>   
