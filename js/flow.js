@@ -1,3 +1,7 @@
+jQuery(document).ready(function(){
+  L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25oYWxzZXkiLCJhIjoiY2lrZm5oOWh3MDAxeHUza2w5MnM2aHdzYSJ9.WXf_OK1N34LKLlkBHCt_9w';
+});
+
 var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=' + usgsNum + '&parameterCd=00065&siteType=ST';
 
    
@@ -44,12 +48,10 @@ weatherFn = function(url) {
       jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
     }
 
-
   })
 }
 
 jQuery.getJSON(flowAPI, function (json) {
-
   var baseString = json.value.timeSeries[0]
   var createTime = baseString.values[0].value[0].dateTime
   var locationName = baseString.sourceInfo.siteName
@@ -71,7 +73,9 @@ jQuery.getJSON(flowAPI, function (json) {
   // Disable tap handler, if present.
   if (map.tap) map.tap.disable();
 
+  var day = moment(createTime).format('MMMM Do YYYY, h:mm:ss a');
 
+  console.log(day);
   var str = locationName;
   function getWords(str) {
     return str.split(/\s+/).slice(0,2).join(" ");
@@ -99,7 +103,7 @@ jQuery.getJSON(flowAPI, function (json) {
     jQuery( "div.usgs_link" ).html( extendedFlow );
 
     jQuery('.river_name').html(getWords(str));
-    jQuery('.createTime').text(createTime);
+    jQuery('.createTime').text(day);
     jQuery('.sitename').text(locationName);
     jQuery('.flowNum').html
     (flowNum + '&nbsp;cfs');
@@ -111,10 +115,5 @@ jQuery.getJSON(flowAPI, function (json) {
 })
 
 
-jQuery(document).ready(function(){
 
-
-  L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25oYWxzZXkiLCJhIjoiY2lrZm5oOWh3MDAxeHUza2w5MnM2aHdzYSJ9.WXf_OK1N34LKLlkBHCt_9w';
-
-});
 

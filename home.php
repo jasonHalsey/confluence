@@ -88,7 +88,7 @@ get_header(); ?>
                 ?>
                 <div class="author_block">
                 <a href="<?php the_permalink(); ?> ">Read More</a>
-                <?php mt_profile_img() ?>
+                
                 <p>By: <?php echo get_the_author_link(); ?></p>
               </div>
                 

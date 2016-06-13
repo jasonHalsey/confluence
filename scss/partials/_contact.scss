@@ -1,3 +1,16 @@
+body.page-template-contact{
+  h2{
+    color:#fff;
+    background-color: $lt_gray;
+    padding:0.15em 0.5em;
+    display:block;
+    font-family: $primayHeaderFont;
+    font-weight:700;
+  }
+  .wpcf7-submit{
+    
+  }
+}
 .contact_archive_hero{
   position: relative;
   background-repeat: no-repeat;
