@@ -2,9 +2,7 @@ jQuery(document).ready(function(){
   L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25oYWxzZXkiLCJhIjoiY2lrZm5oOWh3MDAxeHUza2w5MnM2aHdzYSJ9.WXf_OK1N34LKLlkBHCt_9w';
 });
 
-// var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=' + usgsNum + '&parameterCd=00065&siteType=ST';
 var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=' + usgsNum + '&parameterCd=00060,00065&siteType=ST';
-console.log(flowAPI);
    
 weatherFn = function(url) {
   jQuery.getJSON(url, function (json) {
@@ -22,7 +20,7 @@ weatherFn = function(url) {
     jQuery('.weather_weather').text(weatherWeather);
 
 
-
+    // Switch Weather Icons
     if ($.inArray(weatherWeather, ['Mostly Cloudy','Mostly Cloudy with Haze','Mostly Cloudy and Breezy']) >= 0) {
       jQuery('#weather_icon').addClass('diw-cloud');
     }
@@ -123,9 +121,10 @@ jQuery.getJSON(flowAPI, function (json) {
   // Disable tap handler, if present.
   if (map.tap) map.tap.disable();
 
+  // Convert USGS Time Recorded to Readable Format
   var day = moment(createTime).format('MMMM Do YYYY, h:mm a');
 
-  console.log(day);
+  // Take River Report Location Name a Combine For Title Styling
   var str = locationName;
   function getWords(str) {
     return str.split(/\s+/).slice(0,2).join(" ");
