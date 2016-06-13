@@ -34,9 +34,9 @@ Template Name: river_report
                 <li class="list-group-item ">Recorded At:&nbsp;<span class="createTime">Loading...</span></li>
               </ul>
               <div class="card-block map-block">
-              <div id='map-one' class='map'>Loading Map... </div>
+                <div id='map-one' class='map'>Loading Map... </div>
               </div>
-              <div class="card-block">
+              <div class="extended_links card-block">
                 <div class="noaa_link"></div>
                 <div class="usgs_link"></div>
               </div>
