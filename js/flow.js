@@ -2,8 +2,9 @@ jQuery(document).ready(function(){
   L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25oYWxzZXkiLCJhIjoiY2lrZm5oOWh3MDAxeHUza2w5MnM2aHdzYSJ9.WXf_OK1N34LKLlkBHCt_9w';
 });
 
-var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=' + usgsNum + '&parameterCd=00065&siteType=ST';
-
+// var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=' + usgsNum + '&parameterCd=00065&siteType=ST';
+var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=' + usgsNum + '&parameterCd=00060,00065&siteType=ST';
+console.log(flowAPI);
    
 weatherFn = function(url) {
   jQuery.getJSON(url, function (json) {
@@ -91,46 +92,12 @@ weatherFn = function(url) {
     else if($.inArray(weatherWeather, ['Haze']) >= 0) {
       jQuery('#weather_icon').addClass('diw-fog');
     }
+    else if($.inArray(weatherWeather, ['Sunny and Breezy','Mostly Sunny and Breezy']) >= 0) {
+      jQuery('#weather_icon').addClass('diw-cloud-wind-sun');
+    }
     else {
       jQuery('#weather_icon').addClass('diw-sun')
     }
-
-
-
-
-
-
-
-
-
-    // if(weatherWeather == "Isolated Showers") {
-    //   jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
-    // }
-    // else if(weatherWeather == "Mostly Cloudy") {
-    //   jQuery('#weather_icon').addClass('diw-clouds')
-    // }
-    // else if(weatherWeather == "Chance Rain") {
-    //   jQuery('#weather_icon').addClass('diw-cloud-hail-sun')
-    // }
-    // else if(weatherWeather == "Mostly Sunny") {
-    //   jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
-    // }
-    // else if(weatherWeather == "Mostly Clear") {
-    //   jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
-    // }
-    // else if(weatherWeather == "Sunny") {
-    //   jQuery('#weather_icon').addClass('diw-sun')
-    // }
-    // else if(weatherWeather == "Clear") {
-    //   jQuery('#weather_icon').addClass('diw-sun')
-    // }
-    // else if(weatherWeather == "Slight Chance Rain then Partly Sunny") {
-    //   jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
-    // }
-    // else {
-    //   jQuery('#weather_icon').addClass('diw-cloud-rain-2-sun')
-    // }
-
   })
 }
 
@@ -156,7 +123,7 @@ jQuery.getJSON(flowAPI, function (json) {
   // Disable tap handler, if present.
   if (map.tap) map.tap.disable();
 
-  var day = moment(createTime).format('MMMM Do YYYY, h:mm:ss a');
+  var day = moment(createTime).format('MMMM Do YYYY, h:mm a');
 
   console.log(day);
   var str = locationName;
