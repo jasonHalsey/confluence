@@ -9,6 +9,21 @@ Template Name: river_report
   <?php if ( is_single() ) : ?>
 
   <?php $usgs_site = get_post_meta( $post->ID, '_cmb2_siteNum', true ) ?>
+  <?php $siteLat = get_post_meta( $post->ID, '_cmb2_siteLat', true ) ?>
+  <?php $siteLong = get_post_meta( $post->ID, '_cmb2_siteLong', true ) ?>
+  <?php
+    if (empty($usgs_site)) {
+      include(locate_template('inc/manual.php'));
+  ?>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/noFlow.js"></script>
+  <?php
+    }else{
+      include(locate_template('inc/flow_js.php'));
+  ?>
+      <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/flow.js"></script>
+  <?php
+    }
+  ?>
 
   <section class="module parallax parallax-1" style="background-image: url(<?php echo get_post_meta( $post->ID, '_cmb2_report_image', true ); ?>)">
     <div class="container">
@@ -29,8 +44,14 @@ Template Name: river_report
               <ul class="list-group list-group-flush">
                 <li class="list-group-item weather_weather">Loading...</li>
                 <li class="list-group-item ">Temp:&nbsp;<span class="weather_temp">Loading...</span></li>
-                <li class="list-group-item ">River Gauge:&nbsp;<span class="sitename">Loading...</span></li>
-                <li class="list-group-item ">Flow:&nbsp;<span class="flowNum">Loading...</span></li>
+                <?php
+                  if (!empty($usgs_site)) {
+                ?>
+                  <li class="list-group-item ">River Gauge:&nbsp;<span class="sitename">Loading...</span></li>
+                  <li class="list-group-item ">Flow:&nbsp;<span class="flowNum">Loading...</span></li>
+                <?php
+                  }
+                ?>
                 <li class="list-group-item ">Recorded At:&nbsp;<span class="createTime">Loading...</span></li>
               </ul>
               <div class="card-block map-block">
@@ -47,7 +68,7 @@ Template Name: river_report
           <h3>Guide Report</h3>
             <?php echo get_post_meta( $post->ID, '_cmb2_guide_report', true ); ?>
           <h3>Targeted Species</h3> 
-          <?php include(locate_template('inc/flow_js.php'));?>                    
+                             
           <ul class="species_list">
             <?php 
               $balls = get_post_meta( $post->ID, '_cmb2_species_multicheckbox', true );

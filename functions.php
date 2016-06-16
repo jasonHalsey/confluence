@@ -45,14 +45,14 @@ add_filter('excerpt_more', 'new_excerpt_more');
 	  wp_register_script('what', get_stylesheet_directory_uri() . '/bower_components/what-input/what-input.js');
 	  wp_register_script('foundation', get_stylesheet_directory_uri() . '/bower_components/foundation-sites/dist/foundation.js');
 	  wp_register_script('app', get_stylesheet_directory_uri() . '/js/app.js');
-    wp_register_script('flow', get_stylesheet_directory_uri() . '/js/flow.js');
+    // wp_register_script('flow', get_stylesheet_directory_uri() . '/js/flow.js');
     wp_register_script('moment', get_stylesheet_directory_uri() . '/js/moment.min.js');
 	  wp_register_script('mapbox', 'https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.js');
 
 	  wp_enqueue_script('what');
 	  wp_enqueue_script('foundation');
 	  wp_enqueue_script('app');
-    wp_enqueue_script('flow');
+    // wp_enqueue_script('flow');
 	  wp_enqueue_script('mapbox');
     wp_enqueue_script('moment');
 	}
@@ -241,6 +241,18 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'siteNum',
 				'type' => 'text_medium',
 			),
+      array(
+        'name' => __( 'Latitude', 'cmb2' ),
+        'desc' => __( '* Only set this if USGS Gauge Number is not set', 'cmb2' ),
+        'id'   => $prefix . 'siteLat',
+        'type' => 'text_medium',
+      ),
+      array(
+        'name' => __( 'Longitude', 'cmb2' ),
+        'desc' => __( '* Only set this if USGS Gauge Number is not set', 'cmb2' ),
+        'id'   => $prefix . 'siteLong',
+        'type' => 'text_medium',
+      ),
 			
 			array(
 				'name'    => __( 'Guide Report', 'cmb2' ),

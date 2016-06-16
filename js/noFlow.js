@@ -2,10 +2,55 @@ jQuery(document).ready(function(){
   L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25oYWxzZXkiLCJhIjoiY2lrZm5oOWh3MDAxeHUza2w5MnM2aHdzYSJ9.WXf_OK1N34LKLlkBHCt_9w';
 });
 
-var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=' + usgsNum + '&parameterCd=00060,00065&siteType=ST';
-   
-weatherFn = function(url) {
-  jQuery.getJSON(url, function (json) {
+var flowLat = siteLat
+var flowLong = siteLong
+
+console.log(flowLat);
+console.log(flowLong);
+
+var url = "http://forecast.weather.gov/MapClick.php?lat=" + flowLat + "&lon=" + flowLong + "&FcstType=json"
+
+jQuery.getJSON(url, function (json) {
+
+    var extendedWeather = ('<a href="http://forecast.weather.gov/MapClick.php?lat=' + flowLat + '&lon=' + flowLong + '#.V1jqUsfCTzI" target="_blank">NOAA Forecast</a>');
+
+    
+    var map = L.mapbox.map('map-one', 'mapbox.satellite').setView([flowLat,flowLong], 18);
+
+ // Disable drag and zoom handlers.
+  // map.dragging.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
+  map.keyboard.disable();
+
+  // Disable tap handler, if present.
+  if (map.tap) map.tap.disable();
+
+  L.mapbox.featureLayer({
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [
+            flowLong,
+            flowLat
+          ]
+      },
+      properties: {
+          title: 'Your Spot',
+          description: ' ',
+          'marker-size': 'large',
+          'marker-color': '#BE9A6B',
+          'marker-symbol': 'water'
+      }
+  }).addTo(map);
+
+    jQuery( "div.noaa_link" ).html( extendedWeather );
+
+    // jQuery('.river_name').html(getWords(str));
+    jQuery('.createTime').text(weatherTime);
+    // jQuery('.sitename').text(locationName);
+
 
     var dateCreate = json.creationDateLocal
     var weatherTime  = json.time.startPeriodName[0]
@@ -96,82 +141,7 @@ weatherFn = function(url) {
     else {
       jQuery('#weather_icon').addClass('diw-sun')
     }
-  })
-}
-
-jQuery.getJSON(flowAPI, function (json) {
-  var baseString = json.value.timeSeries[0]
-  var createTime = baseString.values[0].value[0].dateTime
-  var locationName = baseString.sourceInfo.siteName
-  var flowNum = baseString.values[0].value[0].value
-  var flowLat = baseString.sourceInfo.geoLocation.geogLocation.latitude
-  var flowLong = baseString.sourceInfo.geoLocation.geogLocation.longitude
-  var extendedWeather = ('<a href="http://forecast.weather.gov/MapClick.php?lat=' + flowLat + '&lon=' + flowLong + '#.V1jqUsfCTzI" target="_blank">NOAA Forecast</a>');
-  var extendedFlow = ('<a href="http://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=' + usgsNum + '&parm_cd=00060&period=7" target="_blank">Flow Forecast</a>');
-  weatherFn("http://forecast.weather.gov/MapClick.php?lat=" + flowLat + "&lon=" + flowLong + "&FcstType=json");
-  var map = L.mapbox.map('map-one', 'mapbox.satellite').setView([flowLat,flowLong], 18);
-
-
-  if(flowNum == null){ 
-    var flowLat = siteLat
-    var flowLong = siteLong
-  }else{
-    var flowLat = baseString.sourceInfo.geoLocation.geogLocation.latitude
-    var flowLong = baseString.sourceInfo.geoLocation.geogLocation.longitude
-  };
-  console.log(flowLat);
-  console.log(flowLong);
- // Disable drag and zoom handlers.
-  // map.dragging.disable();
-  map.touchZoom.disable();
-  map.doubleClickZoom.disable();
-  map.scrollWheelZoom.disable();
-  map.keyboard.disable();
-
-  // Disable tap handler, if present.
-  if (map.tap) map.tap.disable();
-
-  // Convert USGS Time Recorded to Readable Format
-  var day = moment(createTime).format('MMMM Do YYYY, h:mm a');
-
-  // Take River Report Location Name a Combine For Title Styling
-  var str = locationName;
-  function getWords(str) {
-    return str.split(/\s+/).slice(0,2).join(" ");
-  }
-
-  L.mapbox.featureLayer({
-      type: 'Feature',
-      geometry: {
-          type: 'Point',
-          coordinates: [
-            flowLong,
-            flowLat
-          ]
-      },
-      properties: {
-          title: locationName,
-          description: 'Flow: ' + flowNum + ' ft3/s',
-          'marker-size': 'large',
-          'marker-color': '#BE9A6B',
-          'marker-symbol': 'water'
-      }
-  }).addTo(map);
-
-    jQuery( "div.noaa_link" ).html( extendedWeather );
-    jQuery( "div.usgs_link" ).html( extendedFlow );
-
-    jQuery('.river_name').html(getWords(str));
-    jQuery('.createTime').text(day);
-    jQuery('.sitename').text(locationName);
-    jQuery('.flowNum').html
-    (flowNum + '&nbsp;cfs');
-
-
-    if(flowNum >= 4700) {
-      jQuery('#gauge').addClass('success');
-    }
-})
+});
 
 
 
