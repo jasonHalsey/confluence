@@ -253,7 +253,12 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
         'id'   => $prefix . 'siteLong',
         'type' => 'text_medium',
       ),
-			
+			array(
+        'name' => __( 'Zoom Level', 'cmb2' ),
+        'desc' => __( '* Default is 18', 'cmb2' ),
+        'id'   => $prefix . 'zoomLevel',
+        'type' => 'text_small',
+      ),
 			array(
 				'name'    => __( 'Guide Report', 'cmb2' ),
 				'id'      => $prefix . 'guide_report',

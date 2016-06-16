@@ -8,9 +8,14 @@ Template Name: river_report
 <?php while ( have_posts() ) : the_post(); ?>
   <?php if ( is_single() ) : ?>
 
-  <?php $usgs_site = get_post_meta( $post->ID, '_cmb2_siteNum', true ) ?>
-  <?php $siteLat = get_post_meta( $post->ID, '_cmb2_siteLat', true ) ?>
-  <?php $siteLong = get_post_meta( $post->ID, '_cmb2_siteLong', true ) ?>
+  <?php 
+    $usgs_site = get_post_meta( $post->ID, '_cmb2_siteNum', true );
+    $siteLat = get_post_meta( $post->ID, '_cmb2_siteLat', true );
+    $siteLong = get_post_meta( $post->ID, '_cmb2_siteLong', true );
+    $zoomLevelset = get_post_meta( $post->ID, '_cmb2_zoomLevel', true );
+    $zoomLevel = $zoomLevelset ?: 18;
+  ?>
+  
   <?php
     if (empty($usgs_site)) {
       include(locate_template('inc/manual.php'));
@@ -20,7 +25,7 @@ Template Name: river_report
     }else{
       include(locate_template('inc/flow_js.php'));
   ?>
-      <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/flow.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/flow.js"></script>
   <?php
     }
   ?>
@@ -38,7 +43,17 @@ Template Name: river_report
             <div class="card">
               <div id="weather_icon" class="card-img-top"> </div>
               <div class="card-block">
-                <h3 class="river_name">Loading...</h3>
+                <?php
+                  if (!empty($usgs_site)) {
+                ?>
+                  <h3 class="usgs_river_name">Loading...</h3>
+                <?php
+                  }else {
+                ?>
+                  <h3 class="river_name"><?php the_title(); ?></h3>
+                <?php
+                  }
+                ?>
                 <p class="weather_text card-text">Loading...</p>
               </div>
               <ul class="list-group list-group-flush">

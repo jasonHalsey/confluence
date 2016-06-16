@@ -2,11 +2,9 @@ jQuery(document).ready(function(){
   L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25oYWxzZXkiLCJhIjoiY2lrZm5oOWh3MDAxeHUza2w5MnM2aHdzYSJ9.WXf_OK1N34LKLlkBHCt_9w';
 });
 
-var flowLat = siteLat
-var flowLong = siteLong
-
-console.log(flowLat);
-console.log(flowLong);
+var flowLat = siteLat;
+var flowLong = siteLong;
+var zoomLevel = zoomLevel;
 
 var url = "http://forecast.weather.gov/MapClick.php?lat=" + flowLat + "&lon=" + flowLong + "&FcstType=json"
 
@@ -15,7 +13,7 @@ jQuery.getJSON(url, function (json) {
     var extendedWeather = ('<a href="http://forecast.weather.gov/MapClick.php?lat=' + flowLat + '&lon=' + flowLong + '#.V1jqUsfCTzI" target="_blank">NOAA Forecast</a>');
 
     
-    var map = L.mapbox.map('map-one', 'mapbox.satellite').setView([flowLat,flowLong], 18);
+    var map = L.mapbox.map('map-one', 'mapbox.satellite').setView([flowLat,flowLong], zoomLevel);
 
  // Disable drag and zoom handlers.
   // map.dragging.disable();
@@ -47,10 +45,6 @@ jQuery.getJSON(url, function (json) {
 
     jQuery( "div.noaa_link" ).html( extendedWeather );
 
-    // jQuery('.river_name').html(getWords(str));
-    jQuery('.createTime').text(weatherTime);
-    // jQuery('.sitename').text(locationName);
-
 
     var dateCreate = json.creationDateLocal
     var weatherTime  = json.time.startPeriodName[0]
@@ -64,6 +58,7 @@ jQuery.getJSON(url, function (json) {
     jQuery('.weather_text').text(weatherText);
     jQuery('.weather_weather').text(weatherWeather);
 
+    jQuery('.createTime').text(weatherTime);
 
     // Switch Weather Icons
     if ($.inArray(weatherWeather, ['Mostly Cloudy','Mostly Cloudy with Haze','Mostly Cloudy and Breezy']) >= 0) {
@@ -108,7 +103,7 @@ jQuery.getJSON(url, function (json) {
     else if($.inArray(weatherWeather, ['Thunderstorm','Thunderstorm Rain','Light Thunderstorm Rain','Heavy Thunderstorm Rain','Thunderstorm Rain Fog/Mist','Light Thunderstorm Rain Fog/Mist','Heavy Thunderstorm Rain Fog and Windy','Heavy Thunderstorm Rain Fog/Mist','Thunderstorm Showers in Vicinity','Light Thunderstorm Rain Haze','Heavy Thunderstorm Rain Haze','Thunderstorm Fog','Light Thunderstorm Rain Fog','Heavy Thunderstorm Rain Fog','Thunderstorm Light Rain','Thunderstorm Heavy Rain','Thunderstorm Rain Fog/Mist','Thunderstorm Light Rain Fog/Mist','Thunderstorm Heavy Rain Fog/Mist','Thunderstorm in Vicinity Fog/Mist','Thunderstorm Showers in Vicinity','Thunderstorm in Vicinity Haze','Thunderstorm Haze in Vicinity','Thunderstorm Light Rain Haze','Thunderstorm Heavy Rain Haze','Thunderstorm Fog','Thunderstorm Light Rain Fog','Thunderstorm Heavy Rain Fog','Thunderstorm Hail','Light Thunderstorm Rain Hail','Heavy Thunderstorm Rain Hail','Thunderstorm Rain Hail Fog/Mist','Light Thunderstorm Rain Hail Fog/Mist','Heavy Thunderstorm Rain Hail Fog/Hail','Thunderstorm Showers in Vicinity Hail','Light Thunderstorm Rain Hail Haze','Heavy Thunderstorm Rain Hail Haze','Thunderstorm Hail Fog','Light Thunderstorm Rain Hail Fog','Heavy Thunderstorm Rain Hail Fog','Thunderstorm Light Rain Hail','Thunderstorm Heavy Rain Hail','Thunderstorm Rain Hail Fog/Mist','Thunderstorm Light Rain Hail Fog/Mist','Thunderstorm Heavy Rain Hail Fog/Mist','Thunderstorm in Vicinity Hail','Thunderstorm in Vicinity Hail Haze','Thunderstorm Haze in Vicinity Hail','Thunderstorm Light Rain Hail Haze','Thunderstorm Heavy Rain Hail Haze','Thunderstorm Hail Fog','Thunderstorm Light Rain Hail Fog','Thunderstorm Heavy Rain Hail Fog','Thunderstorm Small Hail/Snow Pellets','Thunderstorm Rain Small Hail/Snow Pellets','Light Thunderstorm Rain Small Hail/Snow Pellets','Heavy Thunderstorm Rain Small Hail/Snow Pellets']) >= 0) {
       jQuery('#weather_icon').addClass('diw-cloud-lightning');
     }
-    else if($.inArray(weatherWeather, ['Snow','Light Snow','Heavy Snow','Snow Showers','Light Snow Showers','Heavy Snow Showers','Showers Snow','Light Showers Snow','Heavy Showers Snow','Snow Fog/Mist','Light Snow Fog/Mist','Heavy Snow Fog/Mist','Snow Showers Fog/Mist','Light Snow Showers Fog/Mist','Heavy Snow Showers Fog/Mist','Showers Snow Fog/Mist','Light Showers Snow Fog/Mist','Heavy Showers Snow Fog/Mist','Snow Fog','Light Snow Fog','Heavy Snow Fog','Snow Showers Fog','Light Snow Showers Fog','Heavy Snow Showers Fog','Showers Snow Fog','Light Showers Snow Fog','Heavy Showers Snow Fog','Showers in Vicinity Snow','Snow Showers in Vicinity','Snow Showers in Vicinity Fog/Mist','Snow Showers in Vicinity Fog','Low Drifting Snow','Blowing Snow','Snow Low Drifting Snow','Snow Blowing Snow','Light Snow Low Drifting Snow','Light Snow Blowing Snow','Light Snow Blowing Snow Fog/Mist','Heavy Snow Low Drifting Snow','Heavy Snow Blowing Snow','Thunderstorm Snow','Light Thunderstorm Snow','Heavy Thunderstorm Snow','Snow Grains','Light Snow Grains','Heavy Snow Grains','Heavy Blowing Snow','Blowing Snow in Vicinity']) >= 0) {
+    else if($.inArray(weatherWeather, ['Snow','Light Snow','Heavy Snow','Snow Showers','Light Snow Showers','Heavy Snow Showers','Showers Snow','Light Showers Snow','Heavy Showers Snow','Snow Fog/Mist','Light Snow Fog/Mist','Heavy Snow Fog/Mist','Snow Showers Fog/Mist','Light Snow Showers Fog/Mist','Heavy Snow Showers Fog/Mist','Showers Snow Fog/Mist','Light Showers Snow Fog/Mist','Heavy Showers Snow Fog/Mist','Snow Fog','Light Snow Fog','Heavy Snow Fog','Snow Showers Fog','Light Snow Showers Fog','Heavy Snow Showers Fog','Showers Snow Fog','Light Showers Snow Fog','Heavy Showers Snow Fog','Showers in Vicinity Snow','Snow Showers in Vicinity','Snow Showers in Vicinity Fog/Mist','Snow Showers in Vicinity Fog','Low Drifting Snow','Blowing Snow','Snow Low Drifting Snow','Snow Blowing Snow','Light Snow Low Drifting Snow','Light Snow Blowing Snow','Light Snow Blowing Snow Fog/Mist','Heavy Snow Low Drifting Snow','Heavy Snow Blowing Snow','Thunderstorm Snow','Light Thunderstorm Snow','Heavy Thunderstorm Snow','Snow Grains','Light Snow Grains','Heavy Snow Grains','Heavy Blowing Snow','Blowing Snow in Vicinity','Rain/Snow then Showers']) >= 0) {
       jQuery('#weather_icon').addClass('diw-cloud-snow');
     }
     else if($.inArray(weatherWeather, ['Windy','Breezy','Fair and Windy','A Few Clouds and Windy','Partly Cloudy and Windy','Mostly Cloudy and Windy','Overcast and Windy']) >= 0) {

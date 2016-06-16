@@ -2,6 +2,7 @@ jQuery(document).ready(function(){
   L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25oYWxzZXkiLCJhIjoiY2lrZm5oOWh3MDAxeHUza2w5MnM2aHdzYSJ9.WXf_OK1N34LKLlkBHCt_9w';
 });
 
+var zoomLevel = zoomLevel;
 var flowAPI = 'http://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=' + usgsNum + '&parameterCd=00060,00065&siteType=ST';
    
 weatherFn = function(url) {
@@ -109,7 +110,7 @@ jQuery.getJSON(flowAPI, function (json) {
   var extendedWeather = ('<a href="http://forecast.weather.gov/MapClick.php?lat=' + flowLat + '&lon=' + flowLong + '#.V1jqUsfCTzI" target="_blank">NOAA Forecast</a>');
   var extendedFlow = ('<a href="http://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=' + usgsNum + '&parm_cd=00060&period=7" target="_blank">Flow Forecast</a>');
   weatherFn("http://forecast.weather.gov/MapClick.php?lat=" + flowLat + "&lon=" + flowLong + "&FcstType=json");
-  var map = L.mapbox.map('map-one', 'mapbox.satellite').setView([flowLat,flowLong], 18);
+  var map = L.mapbox.map('map-one', 'mapbox.satellite').setView([flowLat,flowLong], zoomLevel);
 
 
   if(flowNum == null){ 
@@ -119,8 +120,7 @@ jQuery.getJSON(flowAPI, function (json) {
     var flowLat = baseString.sourceInfo.geoLocation.geogLocation.latitude
     var flowLong = baseString.sourceInfo.geoLocation.geogLocation.longitude
   };
-  console.log(flowLat);
-  console.log(flowLong);
+ 
  // Disable drag and zoom handlers.
   // map.dragging.disable();
   map.touchZoom.disable();
@@ -161,7 +161,7 @@ jQuery.getJSON(flowAPI, function (json) {
     jQuery( "div.noaa_link" ).html( extendedWeather );
     jQuery( "div.usgs_link" ).html( extendedFlow );
 
-    jQuery('.river_name').html(getWords(str));
+    jQuery('.usgs_river_name').html(getWords(str));
     jQuery('.createTime').text(day);
     jQuery('.sitename').text(locationName);
     jQuery('.flowNum').html
