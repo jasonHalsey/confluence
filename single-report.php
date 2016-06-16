@@ -89,7 +89,7 @@ Template Name: river_report
               $balls = get_post_meta( $post->ID, '_cmb2_species_multicheckbox', true );
               foreach($balls as $term): ?>
                 <li class="<?php echo $term; ?> species_box">
-                  <img src="<?php echo bloginfo('template_directory'); ?>/images/species_<?php echo $term?>.jpg " />
+                  <img src="<?php echo bloginfo('template_directory'); ?>/images/species_<?php echo $term?>.gif " />
                   <h6 class="species_title">&mdash;&nbsp;<?php include(locate_template('inc/species_title.php'));?>&nbsp;&mdash;</h6>
                 </li>
             <?php endforeach; ?>

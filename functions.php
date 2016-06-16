@@ -230,10 +230,23 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
 	      'id'      => $prefix . 'species_multicheckbox',
 	      'type'    => 'multicheck',
 	      'options' => array(
-	      		'rainbow' => __( 'Rainbow Trout', 'cmb2' ),
-	      		'steelhead' => __( 'Steelhead', 'cmb2' ),
-	      		'brown' => __( 'Brown Trout', 'cmb2' ),
-	      )
+            'bonefish' => __( 'Bonefish', 'cmb2' ),
+            'brook_trout' => __( 'Brook Trout', 'cmb2' ),
+            'brown_trout' => __( 'Brown Trout', 'cmb2' ),
+            'bull_trout' => __( 'Bull Trout', 'cmb2' ),
+            'coastal_cutthroat_trout' => __( 'Coastal Cutthroat Trout', 'cmb2' ),
+            'dolphin' => __( 'Dolphin', 'cmb2' ),
+            'golden_trout' => __( 'Golden Trout', 'cmb2' ),
+            'largemouth_bass' => __( 'Largemouth Bass', 'cmb2' ),
+            'permit' => __( 'Permit', 'cmb2' ),
+            'rainbow_trout' => __( 'Rainbow Trout', 'cmb2' ),
+            'rainbow_trout_redband' => __( 'Rainbow Trout - Redband', 'cmb2' ),
+            'redfish' => __( 'Redfish', 'cmb2' ),
+            'smallmouth_bass' => __( 'Smallmouth Bass', 'cmb2' ),
+            'snakeriver_finespotted_cutthroat_trout' => __( 'Snakeriver Finespotted Cutthroat', 'cmb2' ),
+            'steelhead' => __( 'Steelhead', 'cmb2' ),
+            'tarpon' => __( 'Tarpon', 'cmb2' ),
+        )
       ),
 			array(
 				'name' => __( 'USGS Gauge Number', 'cmb2' ),
@@ -254,7 +267,7 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
         'type' => 'text_medium',
       ),
 			array(
-        'name' => __( 'Zoom Level', 'cmb2' ),
+        'name' => __( 'Map Zoom Level', 'cmb2' ),
         'desc' => __( '* Default is 18', 'cmb2' ),
         'id'   => $prefix . 'zoomLevel',
         'type' => 'text_small',
