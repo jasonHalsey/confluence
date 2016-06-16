@@ -198,6 +198,7 @@
 }
 ul.species_list{
   list-style: none;
+  margin: 0 1.75em;
 }
 #weather_icon{
   font-size: 4.0em;
@@ -285,7 +286,8 @@ section.module.parallax h1 {
     font-size: 42px;
   }
   section.module p {
-    font-size: 20px;
+    font-size: 18px;
+    line-height:2.0em;
   }
   section.module.parallax h1 {
     font-size: 4.0em;
@@ -303,4 +305,12 @@ h6.species_title{
   font-size: 1.0em;
   font-family: $primayHeaderFont;
   font-weight: 700;
+}
+
+.card-block{
+  margin-bottom: 2.0em;
+  h2{
+    font-family: $primayHeaderFont!important;
+    font-weight: 600;
+  }
 }

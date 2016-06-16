@@ -46,14 +46,16 @@ Template Name: river_report
                 <?php
                   if (!empty($usgs_site)) {
                 ?>
-                  <h3 class="usgs_river_name">Loading...</h3>
+                  <h2 class="usgs_river_name">Loading...</h2>
                 <?php
                   }else {
                 ?>
-                  <h3 class="river_name"><?php the_title(); ?></h3>
+                  <h2 class="river_name"><?php the_title(); ?></h2>
                 <?php
                   }
                 ?>
+                <p> <?php echo get_post_meta( $post->ID, '_cmb2_guide_report', true ); ?></p>
+                <h3>Weather</h3>
                 <p class="weather_text card-text">Loading...</p>
               </div>
               <ul class="list-group list-group-flush">
@@ -80,10 +82,10 @@ Template Name: river_report
         </div>
             
         <div class="large-4 medium-4 columns sidebar"> 
-          <h3>Guide Report</h3>
-            <?php echo get_post_meta( $post->ID, '_cmb2_guide_report', true ); ?>
-          <h3>Targeted Species</h3> 
-                             
+<!--           <h3>Guide Report</h3>
+            <#?php echo get_post_meta( $post->ID, '_cmb2_guide_report', true ); ?>
+ -->
+          <h3>Targeted Species</h3>                     
           <ul class="species_list">
             <?php 
               $balls = get_post_meta( $post->ID, '_cmb2_species_multicheckbox', true );
