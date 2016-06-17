@@ -12,7 +12,7 @@ get_header(); ?>
 
 </section>
 
-<div class="row">
+<div class="row contact_carrier">
 
   <div class="large-8 medium-8 columns">
     <div class="row">

@@ -1,6 +1,12 @@
 jQuery(document).foundation();
 
 jQuery(document).ready(function() {
+
+  jQuery(".downarrow").click(function() {
+    jQuery('html, body').animate({
+        scrollTop: jQuery("#cta_row").offset().top
+    }, 2000);
+  });
 	
   jQuery('ul#menu').addClass('vertical medium-horizontal menu');
   jQuery('ul#menu > li').addClass('hvr-underline-from-center');
@@ -61,6 +67,7 @@ function moveCalNav() {
     scroll_top_duration = 700,
     //grab the "back to top" link
     $back_to_top = $('.cd-top');
+
 
   //hide or show the "back to top" link
   $(window).scroll(function(){

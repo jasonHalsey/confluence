@@ -11,17 +11,29 @@ body.page-template-contact{
     
   }
 }
+.contact_carrier{
+  padding:2.0em;
+  margin-top: -5.0em;
+  background-color: #fff;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+.interior_hero{
+  margin-bottom: 0em;
+}
 .contact_archive_hero{
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-color: $blackish;
-  // padding-top: 126px;
   text-align: center;
-  height: calc(100vh - 50%);
+  height: calc(100vh - 40%);
   img{
     opacity: 0.8;
+  }
+  @media only screen and (max-width: 40em) {
+    height: calc(100vh - 60%);
   }
 }
 .contact_map_container{

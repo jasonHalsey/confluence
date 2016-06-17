@@ -11,12 +11,12 @@ get_header(); ?>
       </div>
         <!-- <#?php echo do_shortcode("[rev_slider alias='homeSlide']"); ?> -->
       </div>
-      <div class="hero-arrow-down">
+      <div class="hero-arrow-down downarrow">
         <div class="chevron"></div>
       </div>
     </div>
     
-    <div class="row ctas_row">
+    <div id="cta_row" class="row ctas_row">
       <div class="large-6 medium-12 columns">
         <figure class="effect-oscar">
           <img src="<?php echo bloginfo('template_directory'); ?>/images/reports_bg.jpg" alt="Fishing Reports"/>

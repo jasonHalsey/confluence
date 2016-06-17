@@ -8,6 +8,15 @@ body.home{
     #phone_container{
         display:none;
     }
+    .downarrow{
+        cursor: pointer;
+        &:hover{
+            -webkit-box-shadow: 1px 0px 25px 3px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 0px 25px 3px rgba(0,0,0,0.75);
+            box-shadow: 1px 0px 25px 3px rgba(0,0,0,0.75);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+    }
 }
 p{
     font-family: $primayBodyFont;
