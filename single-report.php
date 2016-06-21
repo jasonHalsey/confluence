@@ -95,7 +95,21 @@ Template Name: river_report
                   <h6 class="species_title">&mdash;&nbsp;<?php include(locate_template('inc/species_title.php'));?>&nbsp;&mdash;</h6>
                 </li>
             <?php endforeach; ?>
-          </ul>   
+          </ul> 
+          <h3>Current Hatches</h3>                     
+          <ul class="hatch_list">
+            <?php 
+              $hatches = get_post_meta( $post->ID, '_cmb2_hatches_multicheckbox', true );
+              foreach($hatches as $bugs): ?>
+                <li class="<?php echo $bugs; ?> hatch_box">
+                  <h5><?php echo $bugs; ?></h5>
+                </li>
+            <?php endforeach; ?>
+          </ul>
+          <h3>Hot Flies</h3>                     
+          <div class="hot_flies">
+            <?php echo get_post_meta( $post->ID, '_cmb2_hot_flies', true ); ?>
+          </div>  
         </div>
     </div>
   </section>
