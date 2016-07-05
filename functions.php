@@ -13,6 +13,25 @@
 	         );
 	  }
 
+
+/*  Register sidebars and widgetized areas.
+/* ------------------------------------ */ 
+
+function instabar_widgets_init() {
+
+  register_sidebar( array(
+    'name'          => 'Instagram right sidebar',
+    'id'            => 'instagram_right_1',
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2 class="sidebar_title">',
+    'after_title'   => '</h2>',
+  ) );
+
+}
+add_action( 'widgets_init', 'instabar_widgets_init' );
+
+
 /*  Post Thumbnail Support
 /* ------------------------------------ */ 
   add_theme_support( 'post-thumbnails' ); 

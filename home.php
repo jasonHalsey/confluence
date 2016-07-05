@@ -28,16 +28,16 @@ get_header(); ?>
         </figure>
       </div>
       <div class="large-6 medium-12 columns">
-        <figure class="effect-oscar">
-          <img src="<?php echo bloginfo('template_directory'); ?>/images/events_bg.jpg" alt="Fishing Events"/>
-          <figcaption>
-            <h2>Shop <span>Events</span></h2>
-            <p>See What's Going On</p>
-            <a href="<?php echo home_url( '/events' ); ?>">View more</a>
-          </figcaption>     
-        </figure>
+          <figure class="effect-oscar">
+            <img src="<?php echo bloginfo('template_directory'); ?>/images/guide_bg.jpg" alt="Guided Trips"/>
+            <figcaption>
+              <h2>Guided <span>Trips</span></h2>
+              <p>Book a trip to get your adventure started</p>
+              <a href="http://www.deepcanyonoutfitters.com">View more</a>
+            </figcaption>     
+          </figure>
+        </div>
       </div>
-    </div>
 
     <div class="row ctas_row">
       <div class="large-6 medium-12 columns">
@@ -50,17 +50,19 @@ get_header(); ?>
           </figcaption>     
         </figure>
       </div>
+
       <div class="large-6 medium-12 columns">
-        <figure class="effect-oscar">
-          <img src="<?php echo bloginfo('template_directory'); ?>/images/guide_bg.jpg" alt="Guided Trips"/>
-          <figcaption>
-            <h2>Guided <span>Trips</span></h2>
-            <p>Book a trip to get your adventure started</p>
-            <a href="http://www.deepcanyonoutfitters.com">View more</a>
-          </figcaption>     
-        </figure>
+          <figure class="effect-oscar">
+            <img src="<?php echo bloginfo('template_directory'); ?>/images/events_bg.jpg" alt="Fishing Events"/>
+            <figcaption>
+              <h2>Classes &amp; <span>Events</span></h2>
+              <p>See What's Going On</p>
+              <a href="<?php echo home_url( '/events' ); ?>">View more</a>
+            </figcaption>     
+          </figure>
+        </div>
       </div>
-    </div>
+      
 
   
     <div class="row">
@@ -109,6 +111,11 @@ get_header(); ?>
 
           <?php echo do_shortcode("[ai1ec view='agenda']"); ?>
         </div>
+        <?php if ( is_active_sidebar( 'instagram_right_1' ) ) : ?>
+          <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+            <?php dynamic_sidebar( 'instagram_right_1' ); ?>
+          </div><!-- #primary-sidebar -->
+        <?php endif; ?>
         <h4>Reviews</h4>
           <div id='yelpwidget' class="callout">
 

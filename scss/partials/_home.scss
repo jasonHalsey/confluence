@@ -164,3 +164,13 @@ div.feed_block{
     background-repeat: no-repeat;
     background-position: center center;
 }
+ul.instagram-pics{
+    list-style-type: none;
+    @include clearfix;
+    li{
+        width:50%;
+        height:auto;
+        padding:0.5em;
+        float:left;
+    }
+}
