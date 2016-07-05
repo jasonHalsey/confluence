@@ -50,6 +50,11 @@ get_header(); ?>
     <h4>Reviews</h4>
       <div id='yelpwidget' class="callout">
       </div><!-- End yelpwidget -->
+      <?php if ( is_active_sidebar( 'instagram_right_1' ) ) : ?>
+          <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+            <?php dynamic_sidebar( 'instagram_right_1' ); ?>
+          </div><!-- #primary-sidebar -->
+        <?php endif; ?>
   </div><!-- End large-4 -->
 
 </div><!-- End row -->

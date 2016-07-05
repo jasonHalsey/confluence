@@ -31,6 +31,20 @@ function instabar_widgets_init() {
 }
 add_action( 'widgets_init', 'instabar_widgets_init' );
 
+function cat_widgets_init() {
+
+  register_sidebar( array(
+    'name'          => 'Category right sidebar',
+    'id'            => 'cat_right_1',
+    'before_widget' => '<div>',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h2 class="sidebar_title">',
+    'after_title'   => '</h2>',
+  ) );
+
+}
+add_action( 'widgets_init', 'cat_widgets_init' );
+
 
 /*  Post Thumbnail Support
 /* ------------------------------------ */ 

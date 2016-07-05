@@ -79,6 +79,7 @@ get_header(); ?>
 
             <div class="excerpt callout feed_block">
               <h2><a href="<?php the_permalink(); ?> "><?php the_title(); ?></a></h2> 
+              <span class="entry-date"><?php echo get_the_modified_date(); ?></span>
               <div class="report_block">
                 <?php $report = get_post_meta( $post->ID, '_cmb2_guide_report', true ); ?>
                 <?php
@@ -89,6 +90,7 @@ get_header(); ?>
                   }
                 ?>
                 <div class="author_block">
+
                 <a href="<?php the_permalink(); ?> ">Read More</a>
                 
                 <p>By: <?php echo get_the_author_link(); ?></p>
