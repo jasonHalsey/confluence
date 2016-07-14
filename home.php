@@ -9,7 +9,7 @@ get_header(); ?>
       <div class="logo">
         <img src="<?php echo bloginfo('template_directory'); ?>/images/white_logo_600.svg" alt="Confluence Fly Shop"/>
       </div>
-        <!-- <#?php echo do_shortcode("[rev_slider alias='homeSlide']"); ?> -->
+        <?php echo do_shortcode("[rev_slider alias='homeSlider2']"); ?>
       </div>
       <div class="hero-arrow-down downarrow">
         <div class="chevron"></div>

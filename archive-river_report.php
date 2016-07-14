@@ -5,7 +5,7 @@ Template Name: archive_river_report
   get_header();
 ?>
 <section class="interior_hero river_archive_hero">
-
+  <h3 class="page_title"><?php the_title();?></h3>
 </section>
 <!-- TODO: Add Backgroungd Image Header -->
 <div class="row small-up-1 medium-up-2 large-up-3 report_feed_container">   
@@ -21,7 +21,7 @@ Template Name: archive_river_report
             <img src="<?php echo get_post_meta( $post->ID, '_cmb2_report_image', true ); ?>"/>
             <figcaption>
               <h2><?php the_title() ?></h2>
-              <p>See what the <?php the_title() ?> is doing</p>
+              <p><?php echo get_post_meta( $post->ID, '_cmb2_sub_title', true ); ?></p>
               <a href="<?php the_permalink(); ?>">View more</a>
             </figcaption>     
           </figure>

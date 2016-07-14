@@ -2,7 +2,7 @@
   ARCHIVE PAGE
 ============================================================ */
 .interior_hero{
-  margin-bottom: 2.0em;
+  margin-bottom: 0em;
 }
 .river_archive_hero{
   background-image: url(../images/oregon_map.jpg);
@@ -18,7 +18,18 @@
     opacity: 0.8;
   }
 }
-
+.report_feed_container{
+  margin-top: 1.0em;
+}
+h2.usgs_river_name{
+  margin-bottom: 0.15em !important;
+}
+h3.river_sub_title{
+  font-family: $primayHeaderFont;
+  font-size: 1.5em;
+  font-weight:600;
+  color:$dk_gray;
+}
 .report_feed{
   @include clearfix;
   height:400px;
@@ -138,6 +149,7 @@
 
   figure.effect-oscar_report h2 {
     margin: 0% 0 10px 0;
+    font-family: $secondayHeaderFont;
     line-height: 1.0em;
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;

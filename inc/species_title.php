@@ -32,7 +32,7 @@ switch ($term) {
         echo "Rainbow Trout";
         break;
     case "rainbow_trout_redband":
-        echo "Rainbow Trout - Redband";
+        echo "Rainbow Trout";
         break;
     case "redfish":
         echo "Redfish";

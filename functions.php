@@ -78,14 +78,12 @@ add_filter('excerpt_more', 'new_excerpt_more');
 	  wp_register_script('what', get_stylesheet_directory_uri() . '/bower_components/what-input/what-input.js');
 	  wp_register_script('foundation', get_stylesheet_directory_uri() . '/bower_components/foundation-sites/dist/foundation.js');
 	  wp_register_script('app', get_stylesheet_directory_uri() . '/js/app.js');
-    // wp_register_script('spa', get_stylesheet_directory_uri() . '/js/jquery.singlePageNav.min.js');
     wp_register_script('moment', get_stylesheet_directory_uri() . '/js/moment.min.js');
 	  wp_register_script('mapbox', 'https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.js');
 
 	  wp_enqueue_script('what');
 	  wp_enqueue_script('foundation');
 	  wp_enqueue_script('app');
-    // wp_enqueue_script('spa');
 	  wp_enqueue_script('mapbox');
     wp_enqueue_script('moment');
 	}
@@ -179,6 +177,60 @@ add_filter('excerpt_more', 'new_excerpt_more');
 	/* Custom Post Types
 	/* ------------------------------------ */ 
 
+// ----------------- Creates Event Post Type
+add_action('init', 'post_type_event');
+function post_type_event() 
+{
+  $labels = array(
+    'name' => _x('Classes', 'post type general name'),
+    'singular_name' => _x('Class', 'post type singular name'),
+    'add_new' => _x('Add New Class', 'event'),
+    'add_new_item' => __('Add New Class')
+  );
+ 
+ $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'event' ),
+    'capability_type' => 'post',
+    'hierarchical' => true,
+    'menu_position' => null,
+    'supports' => array('title')
+    ); 
+  register_post_type('event',$args);
+  flush_rewrite_rules();
+}; 
+
+// ----------------- Creates Staff Post Type
+add_action('init', 'post_type_staff');
+function post_type_staff() 
+{
+  $labels = array(
+    'name' => _x('Staff', 'post type general name'),
+    'singular_name' => _x('Staff', 'post type singular name'),
+    'add_new' => _x('Add New Staff Member', 'staff'),
+    'add_new_item' => __('Add New Staff Member')
+  );
+ 
+ $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'staff' ),
+    'capability_type' => 'post',
+    'hierarchical' => true,
+    'menu_position' => null,
+    'supports' => array('title')
+    ); 
+  register_post_type('staff',$args);
+  flush_rewrite_rules();
+}; 
+
 // ----------------- Creates Report Post Type
 add_action('init', 'post_type_report');
 function post_type_report() 
@@ -244,6 +296,75 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_cmb2_';
 
+
+
+  /**
+   * Events Metabox Layout
+   */
+  $meta_boxes['events_metabox'] = array(
+    'id'            => 'events_metabox',
+    'title'         => __( 'Events and Classes', 'cmb2' ),
+    'object_types'  => array( 'event' ), // Post type
+    'context'       => 'normal',
+    'priority'      => 'high',
+    'show_names'    => true, // Show field names on the leftd
+    'fields'        => array(
+      
+      array(
+        'name'    => __( 'Class Description', 'cmb2' ),
+        'id'      => $prefix . 'description',
+        'type'    => 'wysiwyg',
+        'options' => array( 'textarea_rows' => 10, ),
+      ),
+      array(
+        'name'    => __( 'Location', 'cmb2' ),
+        'id'      => $prefix . 'location',
+        'type' => 'text_medium',
+      ),     
+      array(
+        'name'    => __( 'Cost', 'cmb2' ),
+        'id'      => $prefix . 'cost',
+        'type' => 'text_medium',
+      )
+    )
+  );
+
+  /**
+   * Staff Metabox Layout
+   */
+  $meta_boxes['staff_metabox'] = array(
+    'id'            => 'staff_metabox',
+    'title'         => __( 'Staff', 'cmb2' ),
+    'object_types'  => array( 'staff' ), // Post type
+    'context'       => 'normal',
+    'priority'      => 'high',
+    'show_names'    => true, // Show field names on the left
+    'fields'        => array(
+      
+      array(
+        'name'    => __( 'Title', 'cmb2' ),
+        'id'      => $prefix . 'title',
+        'type' => 'text_medium',
+      ),
+      
+      array(
+        'name'    => __( 'Bio', 'cmb2' ),
+        'id'      => $prefix . 'bio',
+        'type'    => 'wysiwyg',
+        'options' => array( 'textarea_rows' => 10, ),
+      ),
+      array(
+        'name' => __( 'Profile Image', 'cmb2' ),
+        'desc' => __( 'Upload an image or enter a URL.', 'cmb2' ),
+        'id'   => $prefix . 'staff_image',
+        'type' => 'file',
+      )
+    )
+  );
+
+
+
+
 	/**
 	 * Fishing Report Metabox Layout
 	 */
@@ -254,9 +375,13 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true, // Show field names on the left
-		// 'cmb_styles' => true, // Enqueue the CMB stylesheet on the frontend
 		'fields'        => array(
 			
+      array(
+        'name'    => __( 'Sub-title', 'cmb2' ),
+        'id'      => $prefix . 'sub_title',
+        'type' => 'text_medium',
+      ),
 			array(
 	      'name' => __( 'Species', 'cmb2' ),
 				'desc' => __( 'Currently Targeted Species ', 'cmb2' ),
@@ -272,8 +397,8 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
             'golden_trout' => __( 'Golden Trout', 'cmb2' ),
             'largemouth_bass' => __( 'Largemouth Bass', 'cmb2' ),
             'permit' => __( 'Permit', 'cmb2' ),
-            'rainbow_trout' => __( 'Rainbow Trout', 'cmb2' ),
-            'rainbow_trout_redband' => __( 'Rainbow Trout - Redband', 'cmb2' ),
+            // 'rainbow_trout' => __( 'Rainbow Trout', 'cmb2' ),
+            'rainbow_trout_redband' => __( 'Rainbow Trout', 'cmb2' ),
             'redfish' => __( 'Redfish', 'cmb2' ),
             'smallmouth_bass' => __( 'Smallmouth Bass', 'cmb2' ),
             'snakeriver_finespotted_cutthroat_trout' => __( 'Snakeriver Finespotted Cutthroat', 'cmb2' ),

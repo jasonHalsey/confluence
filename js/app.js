@@ -3,13 +3,17 @@ jQuery(document).foundation();
 jQuery(document).ready(function() {
 
   jQuery(".downarrow").click(function() {
+    var menuheight = jQuery(".fixed_nav").height() * 2;
     jQuery('html, body').animate({
-        scrollTop: jQuery("#cta_row").offset().top
-    }, 2000);
+        scrollTop: jQuery("#cta_row").offset().top -menuheight }, 2000);
   });
+
+
 	
   jQuery('ul#menu').addClass('vertical medium-horizontal menu');
   jQuery('ul#menu > li').addClass('hvr-underline-from-center');
+
+  // jQuery('.top-bar').css('display','block');
 
   // Split Reports-Archive h2 and bold 2nd word for style
   jQuery('figure.effect-oscar_report figcaption > h2').each(function () { 
@@ -26,6 +30,7 @@ jQuery(document).ready(function() {
   });
 
   moveCalNav();
+  pageTitleOffset();
 }); //End Main Doc Ready
 
 
@@ -53,6 +58,14 @@ function moveCalNav() {
   var translate = jQuery('.ai1ec-pull-left');
   jQuery(translate).detach();
   jQuery('.ai1ec-calendar').prepend($(translate));
+}
+
+function pageTitleOffset() {
+  var menuheight = jQuery(".fixed_nav").height();
+  var hHeight = jQuery('h3.page_title').height();
+  var finishedheight = hHeight*1.5;
+  jQuery('.river_archive_hero').css('height',menuheight + finishedheight );
+  console.log(finishedheight);
 }
 
   // Add Yelp Reviews to Sidebar

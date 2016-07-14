@@ -7,6 +7,12 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700|Roboto:400,700' rel='stylesheet' type='text/css'>
     <title>Confluence Fly Shop</title>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/app.css">
+
+    <style type="text/css">
+      <!-- .top-bar{
+         display:none;
+      } -->
+    </style>
     <?php wp_head(); ?>
   </head>
 <body <?php body_class(); ?>>

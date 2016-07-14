@@ -108,7 +108,7 @@ jQuery.getJSON(flowAPI, function (json) {
   var flowLat = baseString.sourceInfo.geoLocation.geogLocation.latitude
   var flowLong = baseString.sourceInfo.geoLocation.geogLocation.longitude
   var extendedWeather = ('<a href="http://forecast.weather.gov/MapClick.php?lat=' + flowLat + '&lon=' + flowLong + '#.V1jqUsfCTzI" target="_blank">NOAA Forecast</a>');
-  var extendedFlow = ('<a href="http://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=' + usgsNum + '&parm_cd=00060&period=7" target="_blank">Flow Forecast</a>');
+  var extendedFlow = ('<a href="http://waterdata.usgs.gov/nwisweb/graph?agency_cd=USGS&site_no=' + usgsNum + '&parm_cd=00060&period=7" target="_blank">Flow Chart</a>');
   weatherFn("http://forecast.weather.gov/MapClick.php?lat=" + flowLat + "&lon=" + flowLong + "&FcstType=json");
   var map = L.mapbox.map('map-one', 'mapbox.satellite').setView([flowLat,flowLong], zoomLevel);
 

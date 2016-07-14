@@ -36,6 +36,16 @@ body.single-post{
   }
 }
 
+/*-- Sidebar--*/
+li.cat-item{
+  a{
+    color:$dk_gray;
+    &:hover{
+      color:$primaryBlue;
+    }
+  }
+}
+
 /*---------------*/
 /***** Sarah *****/
 /*---------------*/
@@ -70,6 +80,7 @@ figure.effect-sarah h2 {
   position: relative;
   overflow: hidden;
   padding: 0.5em 0;
+  font-family: $secondayHeaderFont;
 }
 
 figure.effect-sarah h2::after {

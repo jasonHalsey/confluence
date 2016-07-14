@@ -6,7 +6,7 @@ Template Name: Blog
 ?>
 
 <section class="interior_hero river_archive_hero">
-
+  <h3 class="page_title"><?php the_title();?></h3>
 </section>
 <!-- TODO: Add Backgroungd Image Header  -->
 

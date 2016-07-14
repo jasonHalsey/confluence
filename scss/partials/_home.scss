@@ -18,6 +18,9 @@ body.home{
         }
     }
 }
+h1, h2, h3, h4, h5, h6{
+    font-family: $primayHeaderFont;
+}
 p{
     font-family: $primayBodyFont;
     line-height: 2.5em
@@ -25,6 +28,21 @@ p{
 h4{
     font-family: $primayHeaderFont;
     font-weight: 700;
+}
+h3.page_title{
+    text-align: left;
+    color:#fff;
+    display:block;
+    text-transform: capitalize;
+    font-family: $primayHeaderFont;
+    font-weight: 700;
+    position:absolute;
+    font-size:4.5em;
+    line-height: 1.125em;
+    bottom: 1.5%;
+    left:1.75%;
+    width:50%;
+    border-bottom: 5px solid $primaryBlue;
 }
 .row{
     position:relative;
@@ -42,6 +60,7 @@ h4{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index:666;
     img{
         position: absolute;
         left: 50%;
@@ -56,6 +75,9 @@ h4{
         width:100%;
         height:auto;
     }
+}
+#cta_row{
+    margin-top: 2.0em;
 }
 #yelp{
     width:100%!important;
@@ -133,26 +155,27 @@ div.feed_block{
       height: calc(50vh);
     }
 }
-.hero{
-    background-image: url(../images/img_5552.jpg);
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: $blackish;
-    padding-top: 126px;
-    text-align: center;
-    height: calc(100vh - 35px);
-    @media only screen and (max-width: 40em) {
-      height: calc(50vh - 35px);
-    }
-}
+// .hero{
+//     background-image: url(../images/img_5552.jpg);
+//     position: relative;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: cover;
+//     background-color: $blackish;
+//     padding-top: 126px;
+//     text-align: center;
+//     height: calc(100vh - 35px);
+//     @media only screen and (max-width: 40em) {
+//       height: calc(50vh - 35px);
+//     }
+// }
 .hero-arrow-down {
     position: absolute;
     width: 50px;
     height: 50px;
     bottom: 9px;
     left: 50%;
+    z-index: 668;
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     -webkit-transform: translateX(-50%);
@@ -160,7 +183,6 @@ div.feed_block{
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
-    z-index: 1;
     background-color: #fff;
     background-image: url("../images/nav-size.svg");
     background-size: 15px;

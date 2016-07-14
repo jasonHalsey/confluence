@@ -41,21 +41,24 @@ Template Name: river_report
     <div class="container">
       <div class="large-8 medium-8 columns"> 
             <div class="card">
-              <div id="weather_icon" class="card-img-top"> </div>
+              
               <div class="card-block">
                 <?php
                   if (!empty($usgs_site)) {
                 ?>
                   <h2 class="usgs_river_name">Loading...</h2>
+                  <h3 class="river_sub_title"><?php echo get_post_meta( $post->ID, '_cmb2_sub_title', true ); ?></h3>  
                 <?php
                   }else {
                 ?>
                   <h2 class="river_name"><?php the_title(); ?></h2>
+                  <h3 class="river_sub_title"><?php echo get_post_meta( $post->ID, '_cmb2_sub_title', true ); ?></h3>  
                 <?php
                   }
                 ?>
                 <p> <?php echo get_post_meta( $post->ID, '_cmb2_guide_report', true ); ?></p>
                 <h3>Weather</h3>
+                <div id="weather_icon" class="card-img-top"> </div>
                 <p class="weather_text card-text">Loading...</p>
               </div>
               <ul class="list-group list-group-flush">
