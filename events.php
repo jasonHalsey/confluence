@@ -16,7 +16,7 @@ Template Name: Events
   ?>
   <?php while ( $loop->have_posts() ) : $loop->the_post();?>
       <div>          
-        <h2><?php the_title() ?></h2>
+        <h4><?php the_title() ?></h4>
         <p><?php echo get_post_meta( $post->ID, '_cmb2_description', true ); ?></p>
         <p>Location:&nbsp;<?php echo get_post_meta( $post->ID, '_cmb2_location', true ); ?></p>
         <p>Cost:&nbsp;<?php echo get_post_meta( $post->ID, '_cmb2_cost', true ); ?></p>

@@ -9,8 +9,14 @@ Template Name: calendar event
   <?php if ( is_single() ) : ?>
   <?php
     $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+    $default = site_url('/wp-content/themes/bwo/images/default_bg.jpg');
+    if (!isset($url)) {
+      $bg_image = $url;
+    } else {
+      $bg_image = $default;
+    }
   ?>
-  <section class="module parallax parallax-1" style="background-image:url(<?php echo $url; ?>);">
+  <section class="module parallax parallax-1" style="background-image:url(<?php echo $bg_image; ?>);">
     <div class="container">
       <h1><?php the_title() ?></h1>
     </div>
@@ -19,13 +25,11 @@ Template Name: calendar event
 <div class="row">
   <section class="module content">
     <div class="container">
-      <div class="large-8 medium-8 columns"> 
+      <div class="large-12 medium-12 columns"> 
+      <h4><?php the_title(); ?></h4>
             <?php the_content() ?>
         </div>
             
-        <div class="large-4 medium-4 columns sidebar"> 
-          
-        </div>
     </div>
   </section>
 </div>

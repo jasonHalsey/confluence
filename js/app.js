@@ -38,6 +38,9 @@ jQuery(window).scroll(function(){
     jQuery(".logo").css("opacity", 1 - jQuery(window).scrollTop() / 100);
 });
 
+jQuery(window).resize(function(){
+    pageTitleOffset();
+});
 
 jQuery(window).scroll(function() {
 
