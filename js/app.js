@@ -1,6 +1,28 @@
 jQuery(document).foundation();
 
+jQuery(function($) {
+  $("#rss-feeds").rss("feed://www.fpc.org/rss/rssAdultCounts.aspx",
+      {
+        entryTemplate: '<h3>{title}</h3><p class="speciesCount">{shortBodyPlain}</p>',
+        success: function(){
+          var initialString = jQuery('p.speciesCount').text();
+          var dataArray = initialString .split(";");
+          var arr = $.makeArray( dataArray );
+          var steelhead =  arr[2];
+          var wild_steelhead =  arr[3];
+          //Replace Full RSS with just Steelhead count @ Bonneville Dam
+          jQuery("p.speciesCount").html("<ul><li>" + steelhead + "</li><li>" + wild_steelhead + "</li></ul>");
+        },
+        limit: 100,
+        filterLimit: 10,
+        filter: function(entry, tokens) {
+        return tokens.title.indexOf('BONNEVILLE') > -1
+      }
+    })
+})
+
 jQuery(document).ready(function() {
+
 
   jQuery(".downarrow").click(function() {
     var menuheight = jQuery(".fixed_nav").height() * 2;
@@ -12,8 +34,6 @@ jQuery(document).ready(function() {
 	
   jQuery('ul#menu').addClass('vertical medium-horizontal menu');
   jQuery('ul#menu > li').addClass('hvr-underline-from-center');
-
-  // jQuery('.top-bar').css('display','block');
 
   // Split Reports-Archive h2 and bold 2nd word for style
   jQuery('figure.effect-oscar_report figcaption > h2').each(function () { 
