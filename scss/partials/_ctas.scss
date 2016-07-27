@@ -1,3 +1,4 @@
+
 figure {
   position: relative;
   float: left;
@@ -46,7 +47,7 @@ figure figcaption > a {
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
 figure figcaption > a {
-  z-index: 1000;
+  z-index: 20;
   text-indent: 200%;
   white-space: nowrap;
   font-size: 0;
@@ -104,17 +105,27 @@ figure.effect-oscar figcaption::before {
 }
 
 figure.effect-oscar h2 {
-  margin: 12% 0 10px 0;
+  margin: 24% 0 10px 0;
   -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
   -webkit-transform: translate3d(0,100%,0);
   transform: translate3d(0,100%,0);
-  @include breakpoint(medium down) {
-      margin: 15% 0 10px 0;
+  @media only screen and (max-width: 2000px) {
+    margin: 0% 0 10px 0;
+  } 
+  @media only screen and (max-width: 1500px) {
+    margin: -30% 0 10px 0;
   }
-  @include breakpoint(small down) {
-      margin: 7% 0 10px 0;
-  }
+}
+
+figure.effect-oscar h2.lng_title{
+  margin: 24% 0 10px 0;
+    @media only screen and (max-width: 2000px) {
+      margin: 0% 0 10px 0;
+    }
+    @media only screen and (max-width: 1500px) {
+      margin: -30% 0 10px 0;
+    }
 }
 
 figure.effect-oscar figcaption::before,

@@ -77,7 +77,9 @@ h3.page_title{
     }
 }
 #cta_row{
-    margin-top: 2.0em;
+    max-width: 100%;
+    margin:2.0em 0 0;
+    padding:0;
 }
 #yelp{
     width:100%!important;
@@ -155,20 +157,7 @@ div.feed_block{
       height: calc(50vh);
     }
 }
-// .hero{
-//     background-image: url(../images/img_5552.jpg);
-//     position: relative;
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     background-color: $blackish;
-//     padding-top: 126px;
-//     text-align: center;
-//     height: calc(100vh - 35px);
-//     @media only screen and (max-width: 40em) {
-//       height: calc(50vh - 35px);
-//     }
-// }
+
 .hero-arrow-down {
     position: absolute;
     width: 50px;

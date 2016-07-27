@@ -15,11 +15,11 @@ get_header(); ?>
         <div class="chevron"></div>
       </div>
     </div>
-    
+
     <div id="cta_row" class="row ctas_row">
-      <div class="large-6 medium-12 columns">
+      <div class="large-3 medium-6 small-12 columns first-col">
         <figure class="effect-oscar">
-          <img src="<?php echo bloginfo('template_directory'); ?>/images/reports_bg.jpg" alt="Fishing Reports"/>
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/reports_bg_2.jpg" alt="Fishing Reports"/>
           <figcaption>
             <h2>Fishing <span>Reports</span></h2>
             <p>Get the latest intel from our guides</p>
@@ -27,41 +27,39 @@ get_header(); ?>
           </figcaption>     
         </figure>
       </div>
-      <div class="large-6 medium-12 columns">
-          <figure class="effect-oscar">
-            <img src="<?php echo bloginfo('template_directory'); ?>/images/guide_bg.jpg" alt="Guided Trips"/>
-            <figcaption>
-              <h2>Guided <span>Trips</span></h2>
-              <p>Book a trip to get your adventure started</p>
-              <a href="http://www.deepcanyonoutfitters.com">View more</a>
-            </figcaption>     
-          </figure>
-        </div>
+      <div class="large-3 medium-6 small-12 columns">
+        <figure class="effect-oscar">
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/guide_bg_2.jpg" alt="Guided Trips"/>
+          <figcaption>
+            <h2>Guided <span>Trips</span></h2>
+            <p>Book a trip to get your adventure started</p>
+            <a href="http://www.deepcanyonoutfitters.com">View more</a>
+          </figcaption>     
+        </figure>
       </div>
 
-    <div class="row ctas_row">
-      <div class="large-6 medium-12 columns">
+      <div class="large-3 medium-6 small-12 columns">
         <figure class="effect-oscar">
-          <img src="<?php echo bloginfo('template_directory'); ?>/images/blog_bg.jpg" alt="Blog Posts"/>
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/blog_bg_2.jpg" alt="Blog Posts"/>
           <figcaption>
-            <h2>Blog <span>Posts</span></h2>
+            <h2>Latest <span>Posts</span></h2>
             <p>Get the latest intel from our guides</p>
             <a href="<?php echo home_url( '/blog' ); ?>">View more</a>
           </figcaption>     
         </figure>
       </div>
 
-      <div class="large-6 medium-12 columns">
-          <figure class="effect-oscar">
-            <img src="<?php echo bloginfo('template_directory'); ?>/images/events_bg.jpg" alt="Fishing Events"/>
-            <figcaption>
-              <h2>Classes &amp; <span>Events</span></h2>
-              <p>See What's Going On</p>
-              <a href="<?php echo home_url( '/events' ); ?>">View more</a>
-            </figcaption>     
-          </figure>
-        </div>
+      <div class="large-3 medium-6 small-12 columns">
+        <figure class="effect-oscar">
+          <img src="<?php echo bloginfo('template_directory'); ?>/images/events_bg_2.jpg" alt="Fishing Events"/>
+          <figcaption>
+            <h2 class="lng_title">Classes &amp; <span>Events</span></h2>
+            <p>See What's Going On</p>
+            <a href="<?php echo home_url( '/events' ); ?>">View more</a>
+          </figcaption>     
+        </figure>
       </div>
+    </div>
       
 
   
