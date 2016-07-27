@@ -14,6 +14,9 @@ Template Name: river_report
     $siteLong = get_post_meta( $post->ID, '_cmb2_siteLong', true );
     $zoomLevelset = get_post_meta( $post->ID, '_cmb2_zoomLevel', true );
     $zoomLevel = $zoomLevelset ?: 18;
+    $steelheadCount = get_post_meta( $post->ID, '_cmb2_bonn_steelhead', true );
+    $hatches = get_post_meta( $post->ID, '_cmb2_hatches_multicheckbox', true );
+    $hotFlies = get_post_meta( $post->ID, '_cmb2_hot_flies', true );
   ?>
   
   <?php
@@ -85,9 +88,6 @@ Template Name: river_report
         </div>
             
         <div class="large-4 medium-4 columns sidebar"> 
-<!--           <h3>Guide Report</h3>
-            <#?php echo get_post_meta( $post->ID, '_cmb2_guide_report', true ); ?>
- -->
           <h3>Targeted Species</h3>                     
           <ul class="species_list">
             <?php 
@@ -99,20 +99,43 @@ Template Name: river_report
                 </li>
             <?php endforeach; ?>
           </ul> 
+
+          <?php
+            if (!empty($hatches)) {
+          ?>
           <h3>Current Hatches</h3>                     
           <ul class="hatch_list">
             <?php 
-              $hatches = get_post_meta( $post->ID, '_cmb2_hatches_multicheckbox', true );
               foreach($hatches as $bugs): ?>
                 <li class="<?php echo $bugs; ?> hatch_box">
                   <h5><?php echo $bugs; ?></h5>
                 </li>
             <?php endforeach; ?>
           </ul>
+          <?php } ?>
+          <?php 
+            if (!empty($hotFlies)) {
+          ?>
           <h3>Hot Flies</h3>                     
           <div class="hot_flies">
-            <?php echo get_post_meta( $post->ID, '_cmb2_hot_flies', true ); ?>
-          </div>  
+            <?php echo $hotFlies ?>
+          </div> 
+          <?php
+            }
+          ?> 
+          <?php 
+            if (!empty($steelheadCount)){
+          ?>
+
+            <div id="rss-feeds">
+              <h3>Steelhead Counts</h3>
+                <p>7 - Day Totals from Bonneville Dam</p>   
+            </div>
+            <p><a href="http://www.fpc.org/currentdaily/HistFishTwo_7day-ytd_Adults.htm" target="_blank">Full FPG Chart</a>
+                </p>
+          <?php
+            }
+          ?>
         </div>
     </div>
   </section>

@@ -384,6 +384,13 @@ function cmb2_lmc_metaboxes( array $meta_boxes ) {
         'id'      => $prefix . 'sub_title',
         'type' => 'text_medium',
       ),
+      array(
+        'name'    => __( 'Display Bonneville Steelhead Count', 'cmb2' ),
+        'desc'  => __( 'Checking box adds Steelhead Count to sidebar ', 'cmb2' ),
+        'id'   => $prefix . 'bonn_steelhead',
+        'type' => 'checkbox',
+      ),
+
 			array(
 	      'name' => __( 'Species', 'cmb2' ),
 				'desc' => __( 'Currently Targeted Species ', 'cmb2' ),

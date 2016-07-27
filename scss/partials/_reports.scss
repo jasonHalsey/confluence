@@ -23,6 +23,7 @@
 }
 h2.usgs_river_name{
   margin-bottom: 0.15em !important;
+  font-family: $primayHeaderFont !important;;
 }
 h3.river_sub_title{
   font-family: $primayHeaderFont;
@@ -30,6 +31,7 @@ h3.river_sub_title{
   font-weight:600;
   color:$dk_gray;
 }
+
 .report_feed{
   @include clearfix;
   height:400px;
@@ -237,8 +239,18 @@ ul.species_list{
   padding: 0 1.5em;
   h3{
     margin-top: 2.0em;
+    font-family: $primayHeaderFont;
+    font-weight: 700;
     &:first-child{
       margin-top: 0;
+    }
+  }
+  p.rss_title{
+    margin-top: 0;
+  }
+  #rss-feeds{
+    p{
+      margin-bottom: 0;
     }
   }
 }
@@ -322,6 +334,10 @@ h6.species_title{
 .card-block{
   margin-bottom: 2.0em;
   h2{
+    font-family: $primayHeaderFont!important;
+    font-weight: 600;
+  }
+  h3{
     font-family: $primayHeaderFont!important;
     font-weight: 600;
   }

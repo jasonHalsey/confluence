@@ -110,7 +110,6 @@ get_header(); ?>
         
         <h4>Upcoming Events</h4>
         <div class="callout">
-        <div id="rss-feeds"></div>
           <?php echo do_shortcode("[ai1ec view='agenda']"); ?>
         </div>
         <?php if ( is_active_sidebar( 'instagram_right_1' ) ) : ?>
