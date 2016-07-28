@@ -40,9 +40,8 @@
 	    <?php wp_nav_menu( array( 
       'menu_id' => 'menu', 
       'theme_location' => 'primary-menu', 
-      'menu_class' => 'dropdown menu', 
-      'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
       'container' => false ) ); ?>
+
 	  </div>
 	</div>
 </div>

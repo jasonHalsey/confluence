@@ -1,4 +1,4 @@
-jQuery(document).foundation();
+// jQuery(document).foundation();
 
 jQuery(function($) {
   $("#rss-feeds").rss("feed://www.fpc.org/rss/rssAdultCounts.aspx",
@@ -27,7 +27,7 @@ jQuery(function($) {
 
 jQuery(document).ready(function() {
 
-
+  jQuery(document).foundation();
 
   jQuery(".downarrow").click(function() {
     var menuheight = jQuery(".fixed_nav").height() * 2;

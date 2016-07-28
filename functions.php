@@ -66,7 +66,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
   function jquery_enqueue() {
       wp_deregister_script('jquery');
-      wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false, null);
+      wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js', true, '2.1.0');
       wp_enqueue_script('jquery');
   }
   if (!is_admin()) add_action('wp_enqueue_scripts', 'jquery_enqueue', 11);
@@ -81,6 +81,8 @@ add_filter('excerpt_more', 'new_excerpt_more');
 	  wp_register_script('app', get_stylesheet_directory_uri() . '/js/app.js');
     wp_register_script('moment', get_stylesheet_directory_uri() . '/js/moment.min.js');
 	  wp_register_script('mapbox', 'https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.js');
+
+    
 
 	  wp_enqueue_script('what');
 	  wp_enqueue_script('foundation');

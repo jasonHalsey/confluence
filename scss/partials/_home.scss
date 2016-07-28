@@ -188,3 +188,51 @@ ul.instagram-pics{
         float:left;
     }
 }
+
+ul#menu {
+    @media only screen and (min-width: 640px) {
+        .is-dropdown-submenu-parent{
+            position: relative;
+            > a{
+                &:after{
+                    background: url($right-arrow) 0 0 no-repeat;
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 44%;
+                    width: 11px;
+                    height: 25px;
+                }
+            }
+            &:hover{
+                ul{
+                    display:block;
+                    position: absolute;
+                    padding-top: 0;
+
+                    li{
+                        padding:0.5em;
+                        background-color: $blackTrans;
+                        a{
+                            &:hover{
+                                color:$primaryBlue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ul {
+        display:none;
+        width:120%;
+        @media only screen and (max-width: 639px) {
+          display:block;
+          li{
+            a{
+                padding-left:2.0em;
+            }
+          }
+        }
+    }
+}
