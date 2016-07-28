@@ -38,7 +38,8 @@ jQuery(document).ready(function() {
 
 	
   jQuery('ul#menu').addClass('vertical medium-horizontal menu');
-  jQuery('ul#menu > li').addClass('hvr-underline-from-center');
+ 
+  // jQuery('ul#menu > li').addClass('hvr-underline-from-center');
 
   // Split Reports-Archive h2 and bold 2nd word for style
   jQuery('figure.effect-oscar_report figcaption > h2').each(function () { 
