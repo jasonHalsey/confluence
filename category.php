@@ -4,7 +4,9 @@
 */
 
 get_header(); ?> 
+<section class="interior_hero river_archive_hero">
 
+</section>
 <section id="primary" class="site-content">
 <div id="content" role="main">
 
@@ -13,7 +15,7 @@ get_header(); ?>
 if ( have_posts() ) : ?>
 
 <header class="archive-header">
-<h1 class="archive-title">Category: <?php single_cat_title( '', false ); ?></h1>
+<h1 class="archive-title">Category: <?php echo single_cat_title( '', false ); ?></h1>
 
 
 <?php
@@ -31,7 +33,7 @@ while ( have_posts() ) : the_post(); ?>
 <small><?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?></small>
 
 <div class="entry">
-<?php the_content(); ?>
+<?php  echo get_the_excerpt(); ?>
 
 
 </div>
