@@ -42,7 +42,9 @@
       'theme_location' => 'primary-menu', 
       'menu_class' => 'dropdown menu', 
       'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
-      'container' => false ) ); ?>
+      'walker' => new F6_TOPBAR_MENU_WALKER(),
+      // 'container' => false 
+      ) ); ?>
 	  </div>
 	</div>
 </div>

@@ -31,18 +31,27 @@ h4{
 }
 h3.page_title{
     text-align: left;
-    color:#fff;
+    color:$dk_gray;
     display:block;
     text-transform: capitalize;
     font-family: $primayHeaderFont;
     font-weight: 700;
-    position:absolute;
+    position:relative;
     font-size:4.5em;
-    line-height: 1.125em;
-    bottom: 1.5%;
-    left:1.75%;
+    line-height: 1.0em;
+    margin-left:1.75%;
+    width:100%;
+    margin-top: 2%; 
+}
+h4.page_subtitle{
+    font-family: $secondayHeaderFont;
+    font-weight: 700;
+    font-size: 1.50em;
+    font-style: italic;
+    color: $lt_gray;
+    margin-left:1.75%;
     width:50%;
-    border-bottom: 5px solid $primaryBlue;
+    margin-bottom: 2%; 
 }
 .row{
     position:relative;

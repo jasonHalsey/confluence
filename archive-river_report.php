@@ -5,10 +5,11 @@ Template Name: archive_river_report
   get_header();
 ?>
 <section class="interior_hero river_archive_hero">
-  <h3 class="page_title"><?php the_title();?></h3>
 </section>
 <!-- TODO: Add Backgroungd Image Header -->
-<div class="row small-up-1 medium-up-2 large-up-3 report_feed_container">   
+<div class="row small-up-1 medium-up-2 large-up-3 report_feed_container"> 
+<h3 class="page_title"><?php the_title();?></h3> 
+<h4 class="page_subtitle">Get The Latest Report From The Guids On The Water</h4>  
   <?php
     $mypost = array( 'post_type' => 'report','orderby' => 'menu_order');
     $loop = new WP_Query( $mypost );

@@ -1,7 +1,7 @@
 jQuery(document).foundation();
 
 jQuery(function($) {
-  $("#rss-feeds").rss("feed://www.fpc.org/rss/rssAdultCounts.aspx",
+  jQuery("#rss-feeds").rss("feed://www.fpc.org/rss/rssAdultCounts.aspx",
       {
         entryTemplate: '<p class="rss_title">Ending on {date}</p><p class="speciesCount">{shortBodyPlain}</p>',
         layoutTemplate: "<div class='feed-container'>{entries}</div>",
@@ -26,8 +26,6 @@ jQuery(function($) {
 })
 
 jQuery(document).ready(function() {
-
-
 
   jQuery(".downarrow").click(function() {
     var menuheight = jQuery(".fixed_nav").height() * 2;
@@ -91,8 +89,9 @@ function moveCalNav() {
 function pageTitleOffset() {
   var menuheight = jQuery(".fixed_nav").height();
   var hHeight = jQuery('h3.page_title').height();
-  var finishedheight = hHeight*1.5;
-  jQuery('.river_archive_hero').css('height',menuheight + finishedheight );
+  var finishedheight = hHeight;
+  // var finishedheight = hHeight*1.5;
+  jQuery('.river_archive_hero').css('height',menuheight );
   console.log(finishedheight);
 }
 

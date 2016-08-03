@@ -4,7 +4,10 @@
 */
 
 get_header(); ?> 
-
+<section class="interior_hero river_archive_hero">
+  
+</section>
+<h3 class="page_title"><?php the_title();?></h3>
 <section id="primary" class="site-content">
 <div id="content" role="main">
 

@@ -5,11 +5,11 @@ Template Name: Events
   get_header();
 ?>
 <section class="interior_hero river_archive_hero">
-  <h3 class="page_title"><?php the_title();?></h3>
 </section>
 
 <div class="row small-up-1 medium-up-2 large-up-3 report_feed_container">
-
+  <h3 class="page_title"><?php the_title();?></h3> 
+<h4 class="page_subtitle">Come See What You Can Learn</h4>
   <?php
     $mypost = array( 'post_type' => 'event','orderby' => 'menu_order');
     $loop = new WP_Query( $mypost );

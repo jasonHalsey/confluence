@@ -66,7 +66,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
   function jquery_enqueue() {
       wp_deregister_script('jquery');
-      wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false, null);
+      wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', false, null);
       wp_enqueue_script('jquery');
   }
   if (!is_admin()) add_action('wp_enqueue_scripts', 'jquery_enqueue', 11);
@@ -91,6 +91,8 @@ add_filter('excerpt_more', 'new_excerpt_more');
 	}
 	add_action( 'wp_footer', 'wpb_adding_scripts' ); 
 
+
+include(locate_template('inc/walker.php'));
 
 /*  Theme Options Page
 /* ------------------------------------ */ 

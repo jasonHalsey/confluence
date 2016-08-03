@@ -5,10 +5,11 @@ Template Name: archive_bios
   get_header();
 ?>
 <section class="interior_hero river_archive_hero">
-  <h3 class="page_title"><?php the_title();?></h3>
 </section>
 <!-- TODO: Add Backgroungd Image Header -->
 <div class="row">   
+<h3 class="page_title"><?php the_title();?></h3>
+<h4 class="page_subtitle">Meet The Team</h4>
   <?php
     $staffpost = array( 'post_type' => 'staff','orderby' => 'menu_order');
     $loop = new WP_Query( $staffpost );

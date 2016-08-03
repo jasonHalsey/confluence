@@ -6,13 +6,16 @@ Template Name: Blog
 ?>
 
 <section class="interior_hero river_archive_hero">
-  <h3 class="page_title"><?php the_title();?></h3>
+  
 </section>
 <!-- TODO: Add Backgroungd Image Header  -->
 
 <div class="row">
+<h3 class="page_title"><?php the_title();?></h3> 
+<h4 class="page_subtitle">Read The Latest From Our Staff</h4>
 <div class="large-9 medium-9 columns">
-  <div class="row small-up-1 medium-up-2 large-up-3 report_feed_container">   
+  <div class="row small-up-1 medium-up-2 large-up-3 report_feed_container">  
+
     <?php
       $blog_post = array( 'orderby' => 'post_date', 'order' => 'DESC' );
       
